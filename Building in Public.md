@@ -24,7 +24,7 @@ Benefits:
 
 ## How I'm Applying This
 
-I'm starting this [[My First Note|digital garden]] to document my journey. It's messy, incomplete, and that's the point.
+I'm starting this [[My Second Note|digital garden]] to document my journey. It's messy, incomplete, and that's the point.
 
 ## Related
 
