@@ -1,4 +1,14 @@
 {
   "buildCommand": "bun build.js",
-  "outputDirectory": "_site"
+  "outputDirectory": "_site",
+  "routes": [
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "status": 404,
+      "dest": "/404.html"
+    }
+  ]
 }

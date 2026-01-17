@@ -1,11 +1,15 @@
+# Build output
 _site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
+
+# Obsidian
 .obsidian/
-vendor/
-.DS_Store
-Gemfile.lock
-.bundle/
+
+# Vercel
 .vercel
 .env*.local
+
+# Testing
+.playwright-mcp/
+
+# macOS
+.DS_Store

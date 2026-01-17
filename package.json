@@ -1,0 +1,16 @@
+{
+  "name": "mikeoxhard-blog",
+  "version": "1.0.0",
+  "description": "A minimal, Obsidian-compatible digital garden",
+  "type": "module",
+  "scripts": {
+    "build": "bun build.js",
+    "dev": "bun build.js && cd _site && python3 -m http.server 4000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mchlkucera/mikeoxhard-blog"
+  },
+  "author": "Mike Oxhard",
+  "license": "MIT"
+}
