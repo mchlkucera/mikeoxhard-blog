@@ -1,0 +1,138 @@
+#!/usr/bin/env bun
+
+import { readFileSync, writeFileSync, readdirSync, mkdirSync, existsSync } from 'fs';
+import { join, basename, dirname } from 'path';
+
+// Simple Jekyll-like static site generator
+const outputDir = './_site';
+
+// Create output directory
+if (!existsSync(outputDir)) {
+  mkdirSync(outputDir, { recursive: true });
+}
+
+// Read layouts
+const defaultLayout = readFileSync('_layouts/default.html', 'utf-8');
+const postLayout = readFileSync('_layouts/post.html', 'utf-8');
+
+// Copy assets
+if (!existsSync(join(outputDir, 'assets'))) {
+  mkdirSync(join(outputDir, 'assets'), { recursive: true });
+}
+writeFileSync(join(outputDir, 'assets/style.css'), readFileSync('assets/style.css'));
+
+// Process markdown files
+const mdFiles = readdirSync('.').filter(f => f.endsWith('.md'));
+const pages = [];
+
+for (const file of mdFiles) {
+  const content = readFileSync(file, 'utf-8');
+  const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+
+  if (frontmatterMatch) {
+    const frontmatter = {};
+    frontmatterMatch[1].split('\n').forEach(line => {
+      const match = line.match(/^(\w+):\s*(.+)$/);
+      if (match) frontmatter[match[1]] = match[2];
+    });
+
+    const body = frontmatterMatch[2];
+    const slug = file.replace('.md', '').toLowerCase().replace(/\s+/g, '-');
+
+    pages.push({
+      title: frontmatter.title,
+      date: frontmatter.date,
+      tags: frontmatter.tags,
+      rating: frontmatter.rating,
+      url: `/notes/${slug}/`,
+      content: body,
+      layout: frontmatter.layout || 'post'
+    });
+  }
+}
+
+// Build index page
+const indexContent = readFileSync('index.html', 'utf-8');
+const indexMatch = indexContent.match(/^---\n[\s\S]*?\n---\n([\s\S]*)$/);
+
+if (indexMatch) {
+  let indexHtml = indexMatch[1];
+
+  // Sort pages by date
+  const sortedPages = pages.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  // Build page list
+  let pageList = '';
+  for (const page of sortedPages) {
+    pageList += `
+      <li class="note-item">
+        <h2 class="note-title">
+          <a href="${page.url}">${page.title}</a>
+        </h2>
+        ${page.date ? `<div class="note-date">${new Date(page.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</div>` : ''}
+      </li>
+    `;
+  }
+
+  // Remove Jekyll liquid syntax and replace with actual content
+  indexHtml = indexHtml
+    .replace(/\{%\s*assign\s+[\s\S]*?%\}/g, '')
+    .replace(/\{%\s*for\s+[\s\S]*?%\}/g, '')
+    .replace(/\{%\s*if\s+[\s\S]*?%\}/g, '')
+    .replace(/\{%\s*endif\s*%\}/g, '')
+    .replace(/\{%\s*endfor\s*%\}/g, '')
+    .replace(/<ul class="note-list">[\s\S]*?<\/ul>/, `<ul class="note-list">${pageList}</ul>`);
+
+  const finalHtml = defaultLayout
+    .replace('{{ content }}', indexHtml)
+    .replace(/\{\{\s*site\.title\s*\}\}/g, "Mike's Digital Garden")
+    .replace(/\{\{\s*['"]\/'['"]\s*\|\s*relative_url\s*\}\}/g, '/')
+    .replace(/\{\{\s*['"]\/assets\/style\.css['"].*?\}\}/g, '/assets/style.css')
+    .replace(/\{%\s*if\s+page\.title\s*%\}[\s\S]*?\{%\s*endif\s*%\}/g, "Mike's Digital Garden");
+
+  writeFileSync(join(outputDir, 'index.html'), finalHtml);
+}
+
+// Build individual pages
+for (const page of pages) {
+  const slug = page.url.replace('/notes/', '').replace('/', '');
+  const pageDir = join(outputDir, 'notes', slug);
+
+  if (!existsSync(pageDir)) {
+    mkdirSync(pageDir, { recursive: true });
+  }
+
+  // Convert markdown-like content to HTML (basic conversion)
+  let htmlContent = page.content
+    .replace(/^### (.+)$/gm, '<h3>$1</h3>')
+    .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+    .replace(/^# (.+)$/gm, '<h1>$1</h1>')
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/\n\n/g, '</p><p>')
+    .replace(/^- (.+)$/gm, '<li>$1</li>')
+    .replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
+
+  let pageHtml = postLayout
+    .replace('{{ content }}', `<p>${htmlContent}</p>`)
+    .replace(/\{\{\s*page\.title\s*\}\}/g, page.title)
+    .replace(/\{\{\s*page\.date.*?\}\}/g, page.date ? new Date(page.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : '')
+    .replace(/\{\{\s*page\.rating\s*\}\}/g, page.rating || '')
+    .replace(/\{%\s*if\s+[\s\S]*?%\}/g, '')
+    .replace(/\{%\s*endif\s*%\}/g, '')
+    .replace(/\{%\s*for\s+[\s\S]*?%\}/g, '')
+    .replace(/\{%\s*endfor\s*%\}/g, '');
+
+  const finalHtml = defaultLayout
+    .replace('{{ content }}', pageHtml)
+    .replace(/\{\{\s*site\.title\s*\}\}/g, "Mike's Digital Garden")
+    .replace(/\{%\s*if\s+page\.title\s*%\}.*?\{%\s*endif\s*%\}/g, `${page.title} | Mike's Digital Garden`)
+    .replace(/\{\{\s*['"]\/'['"]\s*\|\s*relative_url\s*\}\}/g, '/')
+    .replace(/\{\{\s*['"]\/assets\/style\.css['"].*?\}\}/g, '/assets/style.css');
+
+  writeFileSync(join(pageDir, 'index.html'), finalHtml);
+}
+
+console.log('✅ Site built successfully!');
+console.log(`📄 Generated ${pages.length} pages`);
+console.log(`🌐 Output: ${outputDir}`);
