@@ -95,6 +95,34 @@ if (indexMatch) {
   writeFileSync(join(outputDir, 'index.html'), finalHtml);
 }
 
+// Build 404 page
+if (existsSync('404.html')) {
+  const notFoundContent = readFileSync('404.html', 'utf-8');
+  const notFoundMatch = notFoundContent.match(/^---\n[\s\S]*?\n---\n([\s\S]*)$/);
+
+  if (notFoundMatch) {
+    let notFoundHtml = notFoundMatch[1];
+
+    // Remove Jekyll liquid syntax
+    notFoundHtml = notFoundHtml
+      .replace(/\{%\s*assign\s+[\s\S]*?%\}/g, '')
+      .replace(/\{%\s*for\s+[\s\S]*?%\}/g, '')
+      .replace(/\{%\s*if\s+[\s\S]*?%\}/g, '')
+      .replace(/\{%\s*endif\s*%\}/g, '')
+      .replace(/\{%\s*endfor\s*%\}/g, '');
+
+    const finalHtml = defaultLayout
+      .replace('{{ content }}', notFoundHtml)
+      .replace(/\{\{\s*site\.title\s*\}\}/g, "Mike Oxhard")
+      .replace(/\{\{\s*['"]\/'['"]\s*\|\s*relative_url\s*\}\}/g, '/')
+      .replace(/\{\{\s*['"]\/assets\/style\.css['"].*?\}\}/g, '/assets/style.css')
+      .replace(/\{%\s*if\s+page\.title\s*%\}[\s\S]*?\{%\s*endif\s*%\}/g, "404 - Page Not Found | Mike Oxhard")
+      .replace(/\{\{\s*'\/'\s*\|\s*relative_url\s*\}\}/g, '/');
+
+    writeFileSync(join(outputDir, '404.html'), finalHtml);
+  }
+}
+
 // Build individual pages
 for (const page of pages) {
   const slug = page.url.replace('/notes/', '').replace('/', '');
@@ -108,8 +136,19 @@ for (const page of pages) {
   // Remove any H1s from content (title is already in header)
   let htmlContent = page.content
     .replace(/^# .+$/gm, '') // Remove H1s completely
+    // Convert wikilinks to markdown links
+    .replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, (match, target, display) => {
+      const slug = target.trim().toLowerCase().replace(/\s+/g, '-');
+      return `[${display.trim()}](/notes/${slug}/)`;
+    })
+    .replace(/\[\[([^\]]+)\]\]/g, (match, title) => {
+      const slug = title.trim().toLowerCase().replace(/\s+/g, '-');
+      return `[${title.trim()}](/notes/${slug}/)`;
+    })
     .replace(/^### (.+)$/gm, '<h3>$1</h3>')
     .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+    .replace(/^---$/gm, '<hr>') // Convert --- to horizontal rule
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>') // Convert markdown links to HTML
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
     .replace(/\*(.+?)\*/g, '<em>$1</em>')
     .trim();
