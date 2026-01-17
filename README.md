@@ -1,4 +1,4 @@
-# Mike Oxhard's Digital Garden
+# Mike Oxhard's Blog
 
 A minimal, Obsidian-compatible digital garden built with a custom Bun-based static site generator. Inspired by Steph Ango's approach to digital note-taking and publishing.
 
