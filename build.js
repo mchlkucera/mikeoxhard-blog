@@ -89,7 +89,8 @@ if (indexMatch) {
     .replace(/\{\{\s*site\.title\s*\}\}/g, "Mike Oxhard")
     .replace(/\{\{\s*['"]\/'['"]\s*\|\s*relative_url\s*\}\}/g, '/')
     .replace(/\{\{\s*['"]\/assets\/style\.css['"].*?\}\}/g, '/assets/style.css')
-    .replace(/\{%\s*if\s+page\.title\s*%\}[\s\S]*?\{%\s*endif\s*%\}/g, "Mike Oxhard");
+    .replace(/\{%\s*if\s+page\.title\s*%\}[\s\S]*?\{%\s*endif\s*%\}/g, "Mike Oxhard")
+    .replace(/\{\{\s*'\/'\s*\|\s*relative_url\s*\}\}/g, '/'); // Fix header link
 
   writeFileSync(join(outputDir, 'index.html'), finalHtml);
 }
@@ -104,15 +105,45 @@ for (const page of pages) {
   }
 
   // Convert markdown-like content to HTML (basic conversion)
+  // Remove any H1s from content (title is already in header)
   let htmlContent = page.content
+    .replace(/^# .+$/gm, '') // Remove H1s completely
     .replace(/^### (.+)$/gm, '<h3>$1</h3>')
     .replace(/^## (.+)$/gm, '<h2>$1</h2>')
-    .replace(/^# (.+)$/gm, '<h1>$1</h1>')
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
     .replace(/\*(.+?)\*/g, '<em>$1</em>')
-    .replace(/\n\n/g, '</p><p>')
-    .replace(/^- (.+)$/gm, '<li>$1</li>')
-    .replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
+    .trim();
+
+  // Handle lists more carefully - process line by line
+  const lines = htmlContent.split('\n');
+  let inList = false;
+  let result = [];
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+
+    if (line.match(/^- (.+)$/)) {
+      if (!inList) {
+        result.push('<ul>');
+        inList = true;
+      }
+      result.push('<li>' + line.substring(2) + '</li>');
+    } else {
+      if (inList && line.trim() === '') {
+        result.push('</ul>');
+        inList = false;
+      }
+      if (line.trim() !== '' || !inList) {
+        result.push(line);
+      }
+    }
+  }
+
+  if (inList) {
+    result.push('</ul>');
+  }
+
+  htmlContent = result.join('\n').replace(/\n\n+/g, '</p><p>');
 
   let pageHtml = postLayout
     .replace('{{ content }}', `<p>${htmlContent}</p>`)
@@ -121,14 +152,16 @@ for (const page of pages) {
     .replace(/\{%\s*if\s+[\s\S]*?%\}/g, '')
     .replace(/\{%\s*endif\s*%\}/g, '')
     .replace(/\{%\s*for\s+[\s\S]*?%\}/g, '')
-    .replace(/\{%\s*endfor\s*%\}/g, '');
+    .replace(/\{%\s*endfor\s*%\}/g, '')
+    .replace(/---[\s\S]*?---/g, ''); // Remove any remaining frontmatter
 
   const finalHtml = defaultLayout
     .replace('{{ content }}', pageHtml)
     .replace(/\{\{\s*site\.title\s*\}\}/g, "Mike Oxhard")
     .replace(/\{%\s*if\s+page\.title\s*%\}.*?\{%\s*endif\s*%\}/g, `${page.title} | Mike Oxhard`)
     .replace(/\{\{\s*['"]\/'['"]\s*\|\s*relative_url\s*\}\}/g, '/')
-    .replace(/\{\{\s*['"]\/assets\/style\.css['"].*?\}\}/g, '/assets/style.css');
+    .replace(/\{\{\s*['"]\/assets\/style\.css['"].*?\}\}/g, '/assets/style.css')
+    .replace(/\{\{\s*'\/'\s*\|\s*relative_url\s*\}\}/g, '/'); // Fix header link
 
   writeFileSync(join(pageDir, 'index.html'), finalHtml);
 }
