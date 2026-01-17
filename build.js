@@ -1,7 +1,7 @@
 #!/usr/bin/env bun
 
 import { readFileSync, writeFileSync, readdirSync, mkdirSync, existsSync } from 'fs';
-import { join, basename, dirname } from 'path';
+import { join } from 'path';
 
 // Simple Jekyll-like static site generator
 const outputDir = './_site';
@@ -42,8 +42,6 @@ for (const file of mdFiles) {
     pages.push({
       title: frontmatter.title,
       date: frontmatter.date,
-      tags: frontmatter.tags,
-      rating: frontmatter.rating,
       url: `/notes/${slug}/`,
       content: body,
       layout: frontmatter.layout || 'post'
@@ -61,15 +59,18 @@ if (indexMatch) {
   // Sort pages by date
   const sortedPages = pages.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  // Build page list
+  // Build page list with YYYY · MM format
   let pageList = '';
   for (const page of sortedPages) {
+    const date = new Date(page.date);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
     pageList += `
       <li class="note-item">
+        <div class="note-date">${year} · ${month}</div>
         <h2 class="note-title">
           <a href="${page.url}">${page.title}</a>
         </h2>
-        ${page.date ? `<div class="note-date">${new Date(page.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</div>` : ''}
       </li>
     `;
   }
@@ -85,10 +86,10 @@ if (indexMatch) {
 
   const finalHtml = defaultLayout
     .replace('{{ content }}', indexHtml)
-    .replace(/\{\{\s*site\.title\s*\}\}/g, "Mike's Digital Garden")
+    .replace(/\{\{\s*site\.title\s*\}\}/g, "Mike Oxhard")
     .replace(/\{\{\s*['"]\/'['"]\s*\|\s*relative_url\s*\}\}/g, '/')
     .replace(/\{\{\s*['"]\/assets\/style\.css['"].*?\}\}/g, '/assets/style.css')
-    .replace(/\{%\s*if\s+page\.title\s*%\}[\s\S]*?\{%\s*endif\s*%\}/g, "Mike's Digital Garden");
+    .replace(/\{%\s*if\s+page\.title\s*%\}[\s\S]*?\{%\s*endif\s*%\}/g, "Mike Oxhard");
 
   writeFileSync(join(outputDir, 'index.html'), finalHtml);
 }
@@ -117,7 +118,6 @@ for (const page of pages) {
     .replace('{{ content }}', `<p>${htmlContent}</p>`)
     .replace(/\{\{\s*page\.title\s*\}\}/g, page.title)
     .replace(/\{\{\s*page\.date.*?\}\}/g, page.date ? new Date(page.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : '')
-    .replace(/\{\{\s*page\.rating\s*\}\}/g, page.rating || '')
     .replace(/\{%\s*if\s+[\s\S]*?%\}/g, '')
     .replace(/\{%\s*endif\s*%\}/g, '')
     .replace(/\{%\s*for\s+[\s\S]*?%\}/g, '')
@@ -125,8 +125,8 @@ for (const page of pages) {
 
   const finalHtml = defaultLayout
     .replace('{{ content }}', pageHtml)
-    .replace(/\{\{\s*site\.title\s*\}\}/g, "Mike's Digital Garden")
-    .replace(/\{%\s*if\s+page\.title\s*%\}.*?\{%\s*endif\s*%\}/g, `${page.title} | Mike's Digital Garden`)
+    .replace(/\{\{\s*site\.title\s*\}\}/g, "Mike Oxhard")
+    .replace(/\{%\s*if\s+page\.title\s*%\}.*?\{%\s*endif\s*%\}/g, `${page.title} | Mike Oxhard`)
     .replace(/\{\{\s*['"]\/'['"]\s*\|\s*relative_url\s*\}\}/g, '/')
     .replace(/\{\{\s*['"]\/assets\/style\.css['"].*?\}\}/g, '/assets/style.css');
 

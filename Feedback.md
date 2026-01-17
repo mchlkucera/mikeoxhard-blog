@@ -1,0 +1,8 @@
+- mainpage
+	- Header link on main page is not working (leads to 404)
+- article
+	- header link is not working
+	- H1 is shown twice - remove the h1 from all content
+	- http://localhost:4000/notes/building-in-public/
+		- "How I'm Applying" is incorrectly pushed from 
+		- Make the negative spa
