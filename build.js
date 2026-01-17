@@ -21,8 +21,8 @@ if (!existsSync(join(outputDir, 'assets'))) {
 }
 writeFileSync(join(outputDir, 'assets/style.css'), readFileSync('assets/style.css'));
 
-// Process markdown files
-const mdFiles = readdirSync('.').filter(f => f.endsWith('.md'));
+// Process markdown files (exclude README)
+const mdFiles = readdirSync('.').filter(f => f.endsWith('.md') && f !== 'README.md');
 const pages = [];
 
 for (const file of mdFiles) {
