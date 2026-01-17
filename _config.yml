@@ -5,11 +5,15 @@ baseurl: ""
 
 # Build settings
 markdown: kramdown
-permalink: /:title/
+permalink: /notes/:title/
 
-# Include markdown files without YAML frontmatter
-include:
-  - "*.md"
+# Defaults
+defaults:
+  - scope:
+      path: "*.md"
+      type: "pages"
+    values:
+      layout: "post"
 
 # Exclude from build
 exclude:
@@ -19,5 +23,7 @@ exclude:
   - vendor
   - .obsidian/
   - README.md
-  - .git/
+  - .git
   - .gitignore
+  - .vercel
+  - .mcp.json
