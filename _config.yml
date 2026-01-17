@@ -1,0 +1,23 @@
+title: Mike's Digital Garden
+description: A personal knowledge vault
+url: ""
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+permalink: /:title/
+
+# Include markdown files without YAML frontmatter
+include:
+  - "*.md"
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .obsidian/
+  - README.md
+  - .git/
+  - .gitignore
