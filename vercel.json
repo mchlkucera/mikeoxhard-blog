@@ -1,5 +1,4 @@
 {
-  "buildCommand": "bun run build.js",
-  "outputDirectory": "_site",
-  "installCommand": "bun install"
+  "buildCommand": "bun build.js",
+  "outputDirectory": "_site"
 }
