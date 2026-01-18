@@ -14,6 +14,8 @@ if (!existsSync(outputDir)) {
 // Read layouts
 const defaultLayout = readFileSync('_layouts/default.html', 'utf-8');
 const postLayout = readFileSync('_layouts/post.html', 'utf-8');
+const galleryLayout = readFileSync('_layouts/gallery.html', 'utf-8');
+const galleryPostLayout = readFileSync('_layouts/gallery-post.html', 'utf-8');
 
 // Copy assets
 if (!existsSync(join(outputDir, 'assets'))) {

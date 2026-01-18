@@ -1,0 +1,143 @@
+---
+layout: default
+---
+
+<style>
+  main {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .gallery-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+  }
+
+  .gallery-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .gallery-header h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  .gallery-header p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin: 0.75rem 0 0 0;
+  }
+
+  .articles-grid {
+    column-count: 3;
+    column-gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .article-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    break-inside: avoid-column;
+    margin-bottom: 1.8rem;
+  }
+
+  .article-image {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+    background-color: var(--bg-secondary);
+    aspect-ratio: 4 / 3;
+  }
+
+  .article-card:nth-child(1) .article-image {
+    aspect-ratio: 4 / 3;
+  }
+
+  .article-card:nth-child(2) .article-image {
+    aspect-ratio: 4 / 5;
+  }
+
+  .article-card:nth-child(3) .article-image {
+    aspect-ratio: 4 / 4;
+  }
+
+  .article-card:nth-child(n+4) .article-image {
+    aspect-ratio: 4 / 3;
+  }
+
+  .article-meta {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .article-date {
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 500;
+  }
+
+  .article-category {
+    border: 1.5px solid var(--text-muted);
+    border-radius: 14px;
+    padding: 0.1rem 0.4rem;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .article-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.25;
+    color: var(--text);
+    margin: 0.15rem 0 0 0;
+  }
+
+  .article-card a {
+    text-decoration: none;
+    color: var(--text);
+  }
+
+  .article-card a:hover .article-title {
+    color: var(--link);
+  }
+
+  @media (max-width: 1024px) {
+    .articles-grid {
+      column-count: 2;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .articles-grid {
+      column-count: 1;
+    }
+
+    .gallery-header h1 {
+      font-size: 1.75rem;
+    }
+  }
+</style>
+
+<div class="gallery-container">
+  <div class="gallery-header">
+    <h1>{{ page.title }}</h1>
+    {% if page.subtitle %}<p>{{ page.subtitle }}</p>{% endif %}
+  </div>
+
+  <div class="articles-grid">
+    {{ content }}
+  </div>
+</div>
