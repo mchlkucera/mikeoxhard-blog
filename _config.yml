@@ -1,0 +1,29 @@
+site_title: Mike Oxhard
+description: Mike Oxhard's blog and thoughts
+url: https://mikeoxhard.com
+
+# Collections for organizing content
+collections:
+  categories:
+    output: false
+    label: "Categories"
+  articles:
+    output: false
+    label: "Articles"
+
+# Include directories that should be processed
+include:
+  - italy
+  - default
+
+# Build settings
+markdown: kramdown
+permalink: /:collection/:path/
+
+# Exclude directories from Jekyll
+exclude:
+  - .git
+  - .gitignore
+  - node_modules
+  - vendor
+  - .DS_Store

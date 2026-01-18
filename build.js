@@ -159,10 +159,9 @@ if (indexMatch) {
     `;
   }
 
-  // Build default pages section with header
+  // Build default pages section
   let defaultPagesList = '';
   if (sortedDefaultPages.length > 0) {
-    defaultPagesList = '<h3 class="section-header">Italy</h3>';
     for (const page of sortedDefaultPages) {
       const date = new Date(page.date);
       const year = date.getFullYear();
@@ -473,14 +472,14 @@ if (existsSync(italyIndexPath)) {
         htmlContent = htmlContent.replace(/\n\n+/g, '</p><p>');
 
         // Create article wrapper with featured image and back link
-        const backLinkHtml = '<a href="/italy/" class="italy-back-link">← Back to Italy</a>';
+        const backLinkWrapper = '<div class="back-link-wrapper"><a href="/italy/" class="italy-back-link">← Back to Italy</a></div>';
         const featuredImageWrapper = article.image ? `<img src="${article.image}" alt="${article.title}" class="italy-featured-image">` : '';
 
         let articleHtml = postLayout
           .replace(/^---\n[\s\S]*?\n---\n/, '') // Remove frontmatter
           .replace(/\{\{\s*page\.title\s*\}\}/g, article.title)
           .replace(/\{\{\s*page\.date.*?\}\}/g, article.date ? new Date(article.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : '')
-          .replace('<article class="post">', `${backLinkHtml}<article class="post">`)
+          .replace('<article class="post">', `${backLinkWrapper}<article class="post">`)
           .replace('{{ content }}', `${featuredImageWrapper}<p>${htmlContent}</p>`)
           .replace(/\{%\s*if\s+[\s\S]*?%\}/g, '')
           .replace(/\{%\s*endif\s*%\}/g, '')

@@ -4,22 +4,38 @@ title: Home
 ---
 
 <div class="home">
-  {% assign sorted_pages = site.pages | sort: 'date' | reverse %}
-
-  <ul class="note-list">
-    {% for page in sorted_pages %}
-      {% if page.title and page.title != "Home" %}
-        <li class="note-item">
-          {% if page.date %}
-            <div class="note-date">
-              {{ page.date | date: "%Y · %m" }}
-            </div>
-          {% endif %}
-          <h2 class="note-title">
-            <a href="{{ page.url | relative_url }}">{{ page.title }}</a>
-          </h2>
+  <!-- Categories Section -->
+  <section class="categories-section">
+    <h2>Categories</h2>
+    <ul class="category-list">
+      {% assign categories = site.pages | where_exp: 'page', 'page.url contains "/italy/"' | map: 'url' | uniq %}
+      {% if categories.size > 0 %}
+        <li class="category-item">
+          <a href="/italy/">italy</a>
         </li>
       {% endif %}
-    {% endfor %}
-  </ul>
+    </ul>
+  </section>
+
+  <!-- Articles Section -->
+  <section class="articles-section">
+    <h2>Articles</h2>
+    <ul class="note-list">
+      {% assign articles = site.pages | where_exp: 'page', 'page.url contains "/default/"' | sort: 'date' | reverse %}
+      {% for page in articles %}
+        {% if page.title and page.title != "Home" %}
+          <li class="note-item">
+            {% if page.date %}
+              <div class="note-date">
+                {{ page.date | date: "%Y · %m" }}
+              </div>
+            {% endif %}
+            <h2 class="note-title">
+              <a href="{{ page.url | relative_url }}">{{ page.title }}</a>
+            </h2>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </section>
 </div>
