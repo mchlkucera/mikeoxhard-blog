@@ -146,9 +146,25 @@ li {
 }
 
 /* Post Layout */
+.post-back-link {
+  margin-bottom: 1.5rem;
+  max-width: 60ch;
+}
+
+.post-back-link a {
+  color: var(--link);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.post-back-link a:hover {
+  color: var(--link-hover);
+}
+
 .post-header {
   margin-bottom: 2rem;
   padding: 0;
+  max-width: 60ch;
 }
 
 .post-header h1 {
@@ -178,6 +194,7 @@ li {
 
 .post-content {
   line-height: 1.7;
+  max-width: 60ch;
 }
 
 .post-content h1,

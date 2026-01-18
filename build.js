@@ -238,10 +238,10 @@ italyArticles.forEach(article => {
   const contentWithoutCover = coverImage ? htmlContent.replace(firstImageMatch[0], '') : htmlContent;
 
   const backLink = '<a href="/italy/" class="italy-back-link">← Back to Italy</a>';
-  const fullContent = backLink + '\n' + contentWithoutCover;
 
-  let articleHtml = postLayout.replace('<div class="post-cover">\n    <!-- Cover image will be inserted here -->\n  </div>', `<div class="post-cover">\n    ${coverImage}\n  </div>`);
-  articleHtml = articleHtml.replace('<div class="post-content">\n    <!-- Content without cover image -->\n  </div>', `<div class="post-content">\n    ${fullContent}\n  </div>`);
+  let articleHtml = postLayout.replace('<div class="post-back-link">\n    <!-- Back link will be inserted here -->\n  </div>', `<div class="post-back-link">\n    ${backLink}\n  </div>`);
+  articleHtml = articleHtml.replace('<div class="post-cover">\n    <!-- Cover image will be inserted here -->\n  </div>', `<div class="post-cover">\n    ${coverImage}\n  </div>`);
+  articleHtml = articleHtml.replace('<div class="post-content">\n    <!-- Content without cover image -->\n  </div>', `<div class="post-content">\n    ${contentWithoutCover}\n  </div>`);
   articleHtml = defaultLayout.replace('{{ content }}', articleHtml);
   articleHtml = renderLiquid(articleHtml, { title: article.title, date: article.date });
 
@@ -291,7 +291,8 @@ defaultFiles.forEach(fileName => {
       const coverImage = firstImageMatch ? firstImageMatch[0] : '';
       const contentWithoutCover = coverImage ? htmlContent.replace(firstImageMatch[0], '') : htmlContent;
 
-      let articleHtml = postLayout.replace('<div class="post-cover">\n    <!-- Cover image will be inserted here -->\n  </div>', `<div class="post-cover">\n    ${coverImage}\n  </div>`);
+      let articleHtml = postLayout.replace('<div class="post-back-link">\n    <!-- Back link will be inserted here -->\n  </div>', '<div class="post-back-link"></div>');
+      articleHtml = articleHtml.replace('<div class="post-cover">\n    <!-- Cover image will be inserted here -->\n  </div>', `<div class="post-cover">\n    ${coverImage}\n  </div>`);
       articleHtml = articleHtml.replace('<div class="post-content">\n    <!-- Content without cover image -->\n  </div>', `<div class="post-content">\n    ${contentWithoutCover}\n  </div>`);
       articleHtml = defaultLayout.replace('{{ content }}', articleHtml);
       articleHtml = renderLiquid(articleHtml, { title: frontmatter.title || articleName, date: frontmatter.date });

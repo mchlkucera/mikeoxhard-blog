@@ -14,7 +14,8 @@ Like plants and ants and humans and stuff.
 
 By existing you accidentally put oxygen everywhere around. Which lead to ozone being created, which lead to more complicated stuff to be created down the line.
 
-Could you know this? Assuming you'd have a 1200 cm³ brain. Could you do a brainstorming with your team on how to make turtles exist? Knowing you "made a difference" afterwords? How could you? Photosynthesis was not your "thing". 
+Could you know this? Assuming you'd have a 1200 cm³ brain. Could you do a brainstorming with your team on how to make turtles exist? So that you could know you "made a difference" afterwards? Could you make a few million year long 
+How could you? Photosynthesis was not your "thing". 
 
 instead of 
 So could you know what was the **meaning** of your life? I'd argue that no. Even if you had a 1200 cm³ brain.
