@@ -4,6 +4,8 @@ title: "6-8: Život barmana"
 date: 2022-08-16
 ---
 
+![Život barmana](../assets/6-8-zivot-barmana-cover.jpg)
+
 ### Pár myšlenek o barmanství
 
 Barmana experta jsem si vždycky představoval jako někoho, kdo je schopen udělat mojito za 12s. Vůbec to není o rychlosti. Právě naopak. Dobrý barman nedělá žádný zbytečný pohyb, má rozmyšleno přesně, co udělá dále a nemrhá žádnou energií. To ještě nezvládám. Buď nedělám pohyby co mám, nebo jich dělám moc a zbrkle.

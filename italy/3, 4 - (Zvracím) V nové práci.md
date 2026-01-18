@@ -4,6 +4,8 @@ title: "3, 4 - (Zvracím) V nové práci"
 date: 2022-08-12
 ---
 
+![Zvracím v nové práci](../assets/3-4-zvracim-cover.jpg)
+
 ### Přijímají mě hned v druhé restauraci do které dávám CV
 
 Nacházím il negozioetto á la trafika, kde tisku 10ks Michal Kučera CV (IT) v3 za 2€. Dále mířím do Zary kde nakupuji černé a bílé triko, jsem ready hledat práci.

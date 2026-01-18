@@ -3,7 +3,8 @@ layout: post
 title: "2, 3 - Hledám práci"
 date: 2022-08-11
 ---
-![[Pasted image 20260118200903.png]]
+
+![Hledám práci - Selfie na kavárně v Římě](../assets/2-3-hledam-praci-cover.jpg)
 
 ## DEN 2
 

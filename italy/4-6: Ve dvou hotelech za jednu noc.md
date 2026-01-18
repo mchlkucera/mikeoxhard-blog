@@ -4,6 +4,8 @@ title: "4-6: Ve dvou hotelech za jednu noc"
 date: 2022-08-15
 ---
 
+![Ve dvou hotelech za jednu noc](../assets/4-6-dva-hotely-cover.jpg)
+
 ### Brazilec > Peníze
 
 Zpytuju svědomí že jsem tam předevčírem Kevina nechal. Kdoví co se mu mohlo stát. Ponaučení: pomoct opilému Brazilci kterého znáš jednu noc je důležitější než tvoje Římská práce. Zapamatovat. Tato emoce bude relevantní pro situace po dnešní směně.

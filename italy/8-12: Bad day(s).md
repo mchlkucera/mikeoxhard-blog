@@ -4,6 +4,8 @@ title: "8-12: Bad day(s)"
 date: 2022-08-19
 ---
 
+![Bad days](../assets/8-12-bad-days-cover.jpg)
+
 ## Za rohem slza
 
 Ptám se Utscha, co mám dělat se zbytkem citrónů, říká mi ať je vyhodím. Když je vyhazuju, zhrozeně říká, že je nemám vyhazovat. Nechápu a vysvětluje že, říkal že po "vyhoď to" říkal že "to je vtip". Haha. A já že evidentně nevím jak se řekne italsky "vtip". Zbytku to přijde vtipné. Asi chápu, mi moc ne.

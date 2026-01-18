@@ -11,29 +11,29 @@ articles:
   - title: "2, 3 - Hledám práci"
     date: "2022-08-11"
     subtitle: "Indonéská masáž celého těla"
-    image: null
+    image: 2-3-hledam-praci-cover.jpg
   - title: "3, 4 - (Zvracím) V nové práci"
     date: "2022-08-12"
     subtitle: "A to hned 3x"
-    image: null
+    image: 3-4-zvracim-cover.jpg
   - title: "4-6: Ve dvou hotelech za jednu noc"
     date: "2022-08-15"
     subtitle: "Zlobí se na mě nadřízení"
-    image: null
+    image: 4-6-dva-hotely-cover.jpg
   - title: "6-8: Život barmana"
     date: "2022-08-16"
     subtitle: "Kolik dostávám zaplaceno?"
-    image: null
+    image: 6-8-zivot-barmana-cover.jpg
   - title: "8-12: Bad day(s)"
     date: "2022-08-19"
     subtitle: "Jsem smutný a končím v práci"
-    image: null
+    image: 8-12-bad-days-cover.jpg
   - title: "13-18: Better days"
     date: "2022-08-24"
     subtitle: "Útočí na mě spolubydlící"
-    image: null
+    image: 13-18-better-days-cover.jpg
   - title: "19-30: Vyhozen z práce"
     date: "2022-09-01"
     subtitle: "Sister's visit and pasta lessons"
-    image: null
+    image: 19-30-vyhozen-cover.jpg
 ---

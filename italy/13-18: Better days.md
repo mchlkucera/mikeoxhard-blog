@@ -4,6 +4,8 @@ title: "13-18: Better days"
 date: 2022-08-24
 ---
 
+![Better days](../assets/13-18-better-days-cover.jpg)
+
 Minulý příspěvek jsem dopsal ve 02:30 a jak jsem psal - rozhodl jsem se, že místo 40min cesty k Johnovi tam a 40min zpátky si najdu nějaký hotel v centru. Obešel jsem 4 hotely, 3 z nich byli plné, čtvrtý byl za 200€/noc. V pátém Hotelu Miami ale měli dostupnou jednu malou místnost. Tam jsem se tedy 8 hodin vyspinkal a ráno šel pěšky do práce (6 minut chůze 🥰)
 
 ## Mám se dobře, neobědvám a potom obědvám

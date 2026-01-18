@@ -4,6 +4,8 @@ title: "19-30: Vyhozen z práce"
 date: 2022-09-01
 ---
 
+![Vyhozen z práce](../assets/19-30-vyhozen-cover.jpg)
+
 ## Ségra a nudle
 
 Navštěvuje mě sestřička, se kterou bydlím dvě noci v hotelu, kde si užívám pohodlnou postel, parádní snídaně a nachlazení z klimatizace (tato informace se ještě bude později hodit, zapamatovat!). Dopoledne máme úplně turistický program - prohlídka Kolosea s průvodcem, lekce dělání italských těstovin, italské víno. Užíváme si společný čas, mám radost že se s někým můžu bavit česky.

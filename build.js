@@ -22,6 +22,22 @@ if (!existsSync(join(outputDir, 'assets'))) {
 }
 writeFileSync(join(outputDir, 'assets/style.css'), readFileSync('assets/style.css'));
 
+// Copy assets
+const assetsDir = join(outputDir, 'assets');
+if (existsSync('assets')) {
+  if (!existsSync(assetsDir)) {
+    mkdirSync(assetsDir, { recursive: true });
+  }
+  const attachmentFiles = readdirSync('assets');
+  attachmentFiles.forEach(file => {
+    if (/\.(png|jpg|jpeg|gif|webp|svg)$/i.test(file)) {
+      const source = join('assets', file);
+      const dest = join(assetsDir, file);
+      writeFileSync(dest, readFileSync(source));
+    }
+  });
+}
+
 // Copy italy images
 const italyImageDir = join(outputDir, 'italy');
 if (existsSync('italy')) {
@@ -319,9 +335,9 @@ if (existsSync(italyIndexPath)) {
         // Check if image exists (from INDEX.md)
         let imageUrl = null;
         if (articleMeta.image) {
-          const imagePath = join(italyDir, articleMeta.image);
+          const imagePath = join('assets', articleMeta.image);
           if (existsSync(imagePath)) {
-            imageUrl = `/italy/${articleMeta.image}`;
+            imageUrl = `/assets/${articleMeta.image}`;
           }
         }
 

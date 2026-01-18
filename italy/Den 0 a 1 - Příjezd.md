@@ -4,7 +4,7 @@ title: Den 0 a 1 - Příjezd
 date: 2022-08-10
 ---
 
-![Příjezd do Říma - Trevi Fountain selfie](../attachments/den-0-1-cover.jpg)
+![Příjezd do Říma - Trevi Fountain selfie](../assets/den-0-1-cover.jpg)
 
 ## Proč jedu do Říma? Londýn.
 
