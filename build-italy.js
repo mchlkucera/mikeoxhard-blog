@@ -111,8 +111,9 @@ const html = `<!DOCTYPE html>
     }
 
     .articles-grid {
-      column-count: 3;
-      column-gap: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
       margin-bottom: 2rem;
     }
 
@@ -120,8 +121,7 @@ const html = `<!DOCTYPE html>
       display: flex;
       flex-direction: column;
       gap: 0.3rem;
-      break-inside: avoid-column;
-      margin-bottom: 1.8rem;
+      margin-bottom: 0;
     }
 
     .article-image {
@@ -194,13 +194,13 @@ const html = `<!DOCTYPE html>
     /* Responsive */
     @media (max-width: 1024px) {
       .articles-grid {
-        column-count: 2;
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
     @media (max-width: 640px) {
       .articles-grid {
-        column-count: 1;
+        grid-template-columns: repeat(1, 1fr);
       }
 
       .italy-header {

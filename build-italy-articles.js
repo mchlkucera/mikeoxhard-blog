@@ -77,16 +77,6 @@ mdFiles.forEach(file => {
       padding: 0;
     }
 
-    .article-featured-image {
-      width: 100%;
-      max-width: 900px;
-      margin: 3rem auto 3rem;
-      display: block;
-      border-radius: 8px;
-      padding: 0 1rem;
-      box-sizing: border-box;
-    }
-
     main {
       max-width: 60ch;
       margin: 0 auto;
@@ -112,6 +102,13 @@ mdFiles.forEach(file => {
     .back-link:hover {
       color: var(--link);
     }
+
+    .article-featured-image {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      object-position: center;
+    }
   </style>
 </head>
 <body>
@@ -121,12 +118,12 @@ mdFiles.forEach(file => {
     </nav>
   </header>
 
-  <a href="/italy/" class="back-link">← Back to Italy</a>
-
-  ${imageUrl ? `<img src="${imageUrl}" alt="${frontmatter.title}" class="article-featured-image">` : ''}
-
   <main>
+    <a href="/italy/" class="back-link">← Back to Italy</a>
+
     <article class="article-wrapper">
+      ${imageUrl ? `<img src="${imageUrl}" alt="${frontmatter.title}" class="article-featured-image">` : ''}
+
       <header class="article-header">
         <h1>${frontmatter.title}</h1>
         <div class="post-meta">

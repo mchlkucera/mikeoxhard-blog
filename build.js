@@ -373,14 +373,15 @@ if (existsSync(italyIndexPath)) {
         htmlContent = htmlContent.replace(/\n\n+/g, '</p><p>');
 
         // Create article wrapper with featured image and back link
-        const backLinkHtml = '<div style="max-width: 60ch; margin: 0 auto; padding: 2rem 1rem 0;"><a href="/italy/" style="display: inline-block; color: var(--text-muted); text-decoration: none; font-size: 0.9rem; margin-bottom: 1.5rem;">← Back to Italy</a></div>';
-        const featuredImageWrapper = article.image ? `<img src="${article.image}" alt="${article.title}" style="width: 100%; max-width: 900px; margin: 2rem auto; display: block; border-radius: 8px; padding: 0 1rem; box-sizing: border-box;">` : '';
+        const backLinkHtml = '<a href="/italy/" class="italy-back-link">← Back to Italy</a>';
+        const featuredImageWrapper = article.image ? `<img src="${article.image}" alt="${article.title}" class="italy-featured-image">` : '';
 
         let articleHtml = postLayout
           .replace(/^---\n[\s\S]*?\n---\n/, '') // Remove frontmatter
           .replace(/\{\{\s*page\.title\s*\}\}/g, article.title)
           .replace(/\{\{\s*page\.date.*?\}\}/g, article.date ? new Date(article.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : '')
-          .replace('{{ content }}', `${backLinkHtml}${featuredImageWrapper}<p>${htmlContent}</p>`)
+          .replace('<article class="post">', `${backLinkHtml}<article class="post">`)
+          .replace('{{ content }}', `${featuredImageWrapper}<p>${htmlContent}</p>`)
           .replace(/\{%\s*if\s+[\s\S]*?%\}/g, '')
           .replace(/\{%\s*endif\s*%\}/g, '')
           .replace(/\{%\s*for\s+[\s\S]*?%\}/g, '')
