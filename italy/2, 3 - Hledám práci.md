@@ -1,6 +1,5 @@
 ---
 layout: post
-title: "2, 3 - Hledám práci"
 date: 2022-08-11
 ---
 

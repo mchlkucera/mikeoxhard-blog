@@ -1,3 +1,8 @@
+---
+date: 2026-01-18
+layout: post
+---
+
 ![Cyanobacteria Cover](cyanobacteria-cover.jpg)
 
 ## Content

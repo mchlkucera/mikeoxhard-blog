@@ -1,6 +1,5 @@
 ---
 layout: post
-title: "13-18: Better days"
 date: 2022-08-24
 ---
 

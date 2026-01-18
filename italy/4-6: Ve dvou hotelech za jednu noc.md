@@ -1,6 +1,5 @@
 ---
 layout: post
-title: "4-6: Ve dvou hotelech za jednu noc"
 date: 2022-08-15
 ---
 

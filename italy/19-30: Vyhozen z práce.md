@@ -1,6 +1,5 @@
 ---
 layout: post
-title: "19-30: Vyhozen z práce"
 date: 2022-09-01
 ---
 

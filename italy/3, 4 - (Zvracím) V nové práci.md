@@ -1,6 +1,5 @@
 ---
 layout: post
-title: "3, 4 - (Zvracím) V nové práci"
 date: 2022-08-12
 ---
 

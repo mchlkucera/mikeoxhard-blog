@@ -1,6 +1,5 @@
 ---
 layout: post
-title: "8-12: Bad day(s)"
 date: 2022-08-19
 ---
 

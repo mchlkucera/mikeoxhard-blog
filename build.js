@@ -57,6 +57,7 @@ if (existsSync('italy')) {
 // Process markdown files (exclude README)
 const mdFiles = readdirSync('.').filter(f => f.endsWith('.md') && f !== 'README.md');
 const pages = [];
+const defaultPages = [];
 
 for (const file of mdFiles) {
   const content = readFileSync(file, 'utf-8');
@@ -71,15 +72,64 @@ for (const file of mdFiles) {
 
     const body = frontmatterMatch[2];
     const slug = file.replace('.md', '').toLowerCase().replace(/\s+/g, '-');
+    const title = file.replace('.md', ''); // Always use filename as title
 
     pages.push({
-      title: frontmatter.title,
+      title: title,
       date: frontmatter.date,
       url: `/notes/${slug}/`,
       content: body,
       layout: frontmatter.layout || 'post'
     });
   }
+}
+
+// Process markdown files from default directory
+if (existsSync('default')) {
+  const defaultDir = 'default';
+  const defaultFiles = readdirSync(defaultDir).filter(f => f.endsWith('.md'));
+
+  for (const file of defaultFiles) {
+    const content = readFileSync(join(defaultDir, file), 'utf-8');
+    const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+
+    if (frontmatterMatch) {
+      const frontmatter = {};
+      frontmatterMatch[1].split('\n').forEach(line => {
+        const match = line.match(/^(\w+):\s*(.+)$/);
+        if (match) frontmatter[match[1]] = match[2];
+      });
+
+      const body = frontmatterMatch[2];
+      const slug = file.replace('.md', '').toLowerCase().replace(/\s+/g, '-');
+      const title = file.replace('.md', ''); // Use filename as title
+
+      defaultPages.push({
+        title: title,
+        date: frontmatter.date,
+        url: `/default/${slug}/`,
+        content: body,
+        layout: frontmatter.layout || 'post',
+        originalFile: file
+      });
+    }
+  }
+}
+
+// Copy files from default directory to output
+const defaultOutputDir = join(outputDir, 'default');
+if (existsSync('default') && !existsSync(defaultOutputDir)) {
+  mkdirSync(defaultOutputDir, { recursive: true });
+}
+if (existsSync('default')) {
+  const defaultFiles = readdirSync('default');
+  defaultFiles.forEach(file => {
+    if (/\.(png|jpg|jpeg|gif|webp|svg|md)$/i.test(file)) {
+      const source = join('default', file);
+      const dest = join(defaultOutputDir, file);
+      writeFileSync(dest, readFileSync(source));
+    }
+  });
 }
 
 // Build index page
@@ -91,6 +141,7 @@ if (indexMatch) {
 
   // Sort pages by date
   const sortedPages = pages.sort((a, b) => new Date(b.date) - new Date(a.date));
+  const sortedDefaultPages = defaultPages.sort((a, b) => new Date(b.date) - new Date(a.date));
 
   // Build page list with YYYY · MM format
   let pageList = '';
@@ -108,6 +159,28 @@ if (indexMatch) {
     `;
   }
 
+  // Build default pages section with header
+  let defaultPagesList = '';
+  if (sortedDefaultPages.length > 0) {
+    defaultPagesList = '<h3 class="section-header">Italy</h3>';
+    for (const page of sortedDefaultPages) {
+      const date = new Date(page.date);
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      defaultPagesList += `
+      <li class="note-item">
+        <div class="note-date">${year} · ${month}</div>
+        <h2 class="note-title">
+          <a href="${page.url}">${page.title}</a>
+        </h2>
+      </li>
+    `;
+    }
+  }
+
+  // Combine both lists
+  const combinedPageList = pageList + defaultPagesList;
+
   // Remove Jekyll liquid syntax and replace with actual content
   indexHtml = indexHtml
     .replace(/\{%\s*assign\s+[\s\S]*?%\}/g, '')
@@ -115,7 +188,7 @@ if (indexMatch) {
     .replace(/\{%\s*if\s+[\s\S]*?%\}/g, '')
     .replace(/\{%\s*endif\s*%\}/g, '')
     .replace(/\{%\s*endfor\s*%\}/g, '')
-    .replace(/<ul class="note-list">[\s\S]*?<\/ul>/, `<ul class="note-list">${pageList}</ul>`);
+    .replace(/<ul class="note-list">[\s\S]*?<\/ul>/, `<ul class="note-list">${combinedPageList}</ul>`);
 
   const finalHtml = defaultLayout
     .replace('{{ content }}', indexHtml)
@@ -160,6 +233,17 @@ if (existsSync('404.html')) {
 for (const page of pages) {
   const slug = page.url.replace('/notes/', '').replace('/', '');
   const pageDir = join(outputDir, 'notes', slug);
+  buildPage(page, pageDir, slug);
+}
+
+// Build individual default pages
+for (const page of defaultPages) {
+  const slug = page.url.replace('/default/', '').replace('/', '');
+  const pageDir = join(outputDir, 'default', slug);
+  buildPage(page, pageDir, slug);
+}
+
+function buildPage(page, pageDir, slug) {
 
   if (!existsSync(pageDir)) {
     mkdirSync(pageDir, { recursive: true });
@@ -181,6 +265,17 @@ for (const page of pages) {
     .replace(/^### (.+)$/gm, '<h3>$1</h3>')
     .replace(/^## (.+)$/gm, '<h2>$1</h2>')
     .replace(/^---$/gm, '<hr>') // Convert --- to horizontal rule
+    // Convert markdown images to HTML (must be before regular links)
+    .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (match, alt, path) => {
+      // Handle image paths: prepend /assets/ for bare filenames
+      let imagePath = path;
+      if (path.startsWith('/')) {
+        imagePath = `/assets${path}`;
+      } else if (!path.startsWith('./') && !path.startsWith('../')) {
+        imagePath = `/assets/${path}`;
+      }
+      return `<img src="${imagePath}" alt="${alt}">`;
+    })
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>') // Convert markdown links to HTML
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
     .replace(/\*(.+?)\*/g, '<em>$1</em>')
@@ -309,9 +404,8 @@ if (existsSync(italyIndexPath)) {
 
         for (const file of italyFiles) {
           if (file.toLowerCase() === 'index.md' || file.toLowerCase().endsWith('.md') === false) continue;
-          const content = readFileSync(join(italyDir, file), 'utf-8');
-          const titleMatch = content.match(/^---\n([\s\S]*?)title:\s*(.+?)(?:\n|$)/i);
-          if (titleMatch && titleMatch[2].trim().replace(/^["']|["']$/g, '') === articleMeta.title) {
+          // Match article by filename (without .md extension)
+          if (file.replace('.md', '') === articleMeta.title) {
             articleFile = file;
             break;
           }
@@ -363,6 +457,12 @@ if (existsSync(italyIndexPath)) {
           .replace(/^### (.+)$/gm, '<h3>$1</h3>')
           .replace(/^## (.+)$/gm, '<h2>$1</h2>')
           .replace(/^# (.+)$/gm, '<h1>$1</h1>')
+          // Convert markdown images to HTML (must be before regular links)
+          .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (match, alt, path) => {
+            // If path starts with /, prepend assets/
+            const imagePath = path.startsWith('/') ? `/assets${path}` : path;
+            return `<img src="${imagePath}" alt="${alt}">`;
+          })
           .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
           .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
           .replace(/\*(.+?)\*/g, '<em>$1</em>')

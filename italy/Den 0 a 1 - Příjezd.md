@@ -1,6 +1,5 @@
 ---
 layout: post
-title: Den 0 a 1 - Příjezd
 date: 2022-08-10
 ---
 

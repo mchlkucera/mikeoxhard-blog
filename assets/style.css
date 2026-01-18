@@ -71,6 +71,11 @@ main {
   min-height: calc(100vh - 200px);
 }
 
+/* Italy articles - wider main container */
+main:has(.italy-back-link) {
+  max-width: calc(60ch + 300px);
+}
+
 footer {
   max-width: 60ch;
   margin: 0 auto;
@@ -173,6 +178,18 @@ li {
   margin-top: 0;
 }
 
+/* Italy article - constrain all text elements to same width */
+main:has(.italy-back-link) .italy-back-link,
+main:has(.italy-back-link) .post-header,
+main:has(.italy-back-link) .post-header h1,
+main:has(.italy-back-link) p,
+main:has(.italy-back-link) h2,
+main:has(.italy-back-link) h3 {
+  max-width: 60ch;
+  margin-left: 0;
+  margin-right: auto;
+}
+
 /* Homepage List */
 .note-list {
   list-style: none;
@@ -273,17 +290,14 @@ img {
 }
 
 .italy-featured-image {
-  width: calc(100% + 300px);
+  width: 100%;
   margin-top: 2rem;
   margin-bottom: 2rem;
   display: block;
   border-radius: 6px;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   object-position: center;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 /* Italy article responsive */

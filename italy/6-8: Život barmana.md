@@ -1,6 +1,5 @@
 ---
 layout: post
-title: "6-8: Život barmana"
 date: 2022-08-16
 ---
 
