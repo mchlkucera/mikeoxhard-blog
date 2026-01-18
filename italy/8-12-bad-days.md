@@ -1,4 +1,13 @@
-# 8-12: Bad day(s)
+---
+layout: post
+title: "8-12: Bad day(s)"
+date: 2022-08-19
+tags:
+  - italy
+  - work
+  - struggle
+rating: 7
+---
 
 **Summary:** Jsem smutný a končím v práci (?)
 

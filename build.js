@@ -223,22 +223,55 @@ for (const page of pages) {
 }
 
 // Process Italy gallery directory
-const italyIndexPath = 'italy/index.md';
+const italyIndexPath = 'italy/INDEX.md';
 if (existsSync(italyIndexPath)) {
-  const italyReadmeContent = readFileSync(italyIndexPath, 'utf-8');
-  const italyReadmeMatch = italyReadmeContent.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+  const italyIndexContent = readFileSync(italyIndexPath, 'utf-8');
+  const italyIndexMatch = italyIndexContent.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
 
-  if (italyReadmeMatch) {
-    // Parse Italy config
+  if (italyIndexMatch) {
+    // Parse Italy config and articles from frontmatter
     const italyConfig = {};
-    italyReadmeMatch[1].split('\n').forEach(line => {
-      const match = line.match(/^(\w+):\s*"?(.+?)"?$/);
-      if (match) {
-        italyConfig[match[1]] = match[2].replace(/"/g, '');
+    const articlesYAML = [];
+    let inArticles = false;
+    let currentArticle = {};
+
+    italyIndexMatch[1].split('\n').forEach(line => {
+      if (line.trim().startsWith('articles:')) {
+        inArticles = true;
+        return;
+      }
+
+      if (inArticles) {
+        if (line.startsWith('  - ')) {
+          if (Object.keys(currentArticle).length > 0) {
+            articlesYAML.push(currentArticle);
+          }
+          currentArticle = {};
+          const match = line.match(/- (\w+):\s*(.+)$/);
+          if (match) {
+            const value = match[2].replace(/^["']|["']$/g, '');
+            currentArticle[match[1]] = value === 'null' ? null : value;
+          }
+        } else if (line.startsWith('    ') && line.trim()) {
+          const match = line.match(/(\w+):\s*(.+)$/);
+          if (match) {
+            const value = match[2].replace(/^["']|["']$/g, '');
+            currentArticle[match[1]] = value === 'null' ? null : value;
+          }
+        }
+      } else {
+        const match = line.match(/^(\w+):\s*"?(.+?)"?$/);
+        if (match) {
+          italyConfig[match[1]] = match[2].replace(/"/g, '');
+        }
       }
     });
 
-    if (italyConfig.type === 'directory') {
+    if (Object.keys(currentArticle).length > 0) {
+      articlesYAML.push(currentArticle);
+    }
+
+    if (italyConfig.layout === 'gallery') {
       const italyDir = 'italy';
       const italyOutputDir = join(outputDir, 'italy');
 
@@ -247,54 +280,60 @@ if (existsSync(italyIndexPath)) {
         mkdirSync(italyOutputDir, { recursive: true });
       }
 
-      // Process Italy articles
-      const italyFiles = readdirSync(italyDir)
-        .filter(f => f.endsWith('.md') && f !== 'README.md')
-        .sort();
-
       const italyArticles = [];
 
-      for (const file of italyFiles) {
-        const content = readFileSync(join(italyDir, file), 'utf-8');
+      // Process articles from INDEX.md
+      for (const articleMeta of articlesYAML) {
+        // Convert title to filename
+        const filename = articleMeta.title.toLowerCase().replace(/\s+/g, '-') + '.md';
+        const filepath = join(italyDir, articleMeta.title + '.md');
+
+        // Try to find the article file
+        let articleFile = null;
+        const italyFiles = readdirSync(italyDir);
+        for (const file of italyFiles) {
+          if (file.toLowerCase() === articleMeta.title.toLowerCase() + '.md') {
+            articleFile = file;
+            break;
+          }
+        }
+
+        if (!articleFile) {
+          console.warn(`Article file not found for: ${articleMeta.title}`);
+          continue;
+        }
+
+        const content = readFileSync(join(italyDir, articleFile), 'utf-8');
         const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
 
         if (!frontmatterMatch) continue;
 
-        const frontmatter = {};
-        frontmatterMatch[1].split('\n').forEach(line => {
-          const match = line.match(/^(\w+):\s*(.+)$/);
-          if (match) frontmatter[match[1]] = match[2];
-        });
-
         const body = frontmatterMatch[2];
 
-        // Extract first image
+        // Remove all images from body
+        let bodyWithoutImage = body.replace(/!\[\[(.+?)\]\]|!\[.*?\]\((.+?)\)/g, '').trim();
+
+        // Check if image exists (from INDEX.md)
         let imageUrl = null;
-        let bodyWithoutImage = body;
-        const imageMatch = body.match(/!\[\[(.+?)\]\]|!\[.*?\]\((.+?)\)/);
-        if (imageMatch) {
-          const rawImagePath = imageMatch[1] || imageMatch[2];
-          // Resolve image path relative to italy folder
-          imageUrl = /^(https?:|\/|data:)/.test(rawImagePath) ? rawImagePath : `/italy/${rawImagePath}`;
-          bodyWithoutImage = body.replace(/!\[\[(.+?)\]\]|!\[.*?\]\((.+?)\)/, '').trim();
+        if (articleMeta.image) {
+          const imagePath = join(italyDir, articleMeta.image);
+          if (existsSync(imagePath)) {
+            imageUrl = `/italy/${articleMeta.image}`;
+          }
         }
 
-        const slug = file.replace('.md', '').toLowerCase().replace(/\s+/g, '-');
+        const slug = articleMeta.title.toLowerCase().replace(/\s+/g, '-');
 
-        // Generate placeholder image if not found
-        const placeholderColors = ['#B7B5AC', '#4A90E2', '#E8D4A8', '#24837B', '#A97C4F', '#6F6E69'];
-        const imageColor = placeholderColors[italyArticles.length % placeholderColors.length];
-
-        const finalImageUrl = imageUrl || `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='${encodeURIComponent(imageColor)}' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' font-size='24' fill='%23FFFCF0' text-anchor='middle' dy='.3em'%3E${encodeURIComponent(frontmatter.title || 'Article')}%3C/text%3E%3C/svg%3E`;
-
-        italyArticles.push({
-          title: frontmatter.title,
-          date: frontmatter.date,
+        const article = {
+          title: articleMeta.title,
+          date: articleMeta.date,
+          subtitle: articleMeta.subtitle || '',
           slug: slug,
-          image: finalImageUrl,
-          content: bodyWithoutImage,
-          tags: frontmatter.tags ? (frontmatter.tags.match(/\w+/g) || []) : []
-        });
+          image: imageUrl,
+          content: bodyWithoutImage
+        };
+
+        italyArticles.push(article);
 
         // Create individual article page
         const articleDir = join(italyOutputDir, slug);
@@ -316,16 +355,14 @@ if (existsSync(italyIndexPath)) {
         htmlContent = htmlContent.replace(/(<li>.*<\/li>)/s, (match) => '<ul>' + match + '</ul>');
         htmlContent = htmlContent.replace(/\n\n+/g, '</p><p>');
 
-        const featuredImageHtml = imageUrl ? `<img src="${imageUrl}" alt="${frontmatter.title}" class="article-featured-image">` : '';
-
         // Create article wrapper with featured image and back link
         const backLinkHtml = '<div style="max-width: 60ch; margin: 0 auto; padding: 2rem 1rem 0;"><a href="/italy/" style="display: inline-block; color: var(--text-muted); text-decoration: none; font-size: 0.9rem; margin-bottom: 1.5rem;">← Back to Italy</a></div>';
-        const featuredImageWrapper = imageUrl ? `<img src="${imageUrl}" alt="${frontmatter.title}" style="width: 100%; max-width: 900px; margin: 2rem auto; display: block; border-radius: 8px; padding: 0 1rem; box-sizing: border-box;">` : '';
+        const featuredImageWrapper = article.image ? `<img src="${article.image}" alt="${article.title}" style="width: 100%; max-width: 900px; margin: 2rem auto; display: block; border-radius: 8px; padding: 0 1rem; box-sizing: border-box;">` : '';
 
         let articleHtml = postLayout
           .replace(/^---\n[\s\S]*?\n---\n/, '') // Remove frontmatter
-          .replace(/\{\{\s*page\.title\s*\}\}/g, frontmatter.title)
-          .replace(/\{\{\s*page\.date.*?\}\}/g, frontmatter.date ? new Date(frontmatter.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : '')
+          .replace(/\{\{\s*page\.title\s*\}\}/g, article.title)
+          .replace(/\{\{\s*page\.date.*?\}\}/g, article.date ? new Date(article.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : '')
           .replace('{{ content }}', `${backLinkHtml}${featuredImageWrapper}<p>${htmlContent}</p>`)
           .replace(/\{%\s*if\s+[\s\S]*?%\}/g, '')
           .replace(/\{%\s*endif\s*%\}/g, '')
@@ -336,7 +373,7 @@ if (existsSync(italyIndexPath)) {
         const finalArticleHtml = defaultLayout
           .replace('{{ content }}', articleHtml)
           .replace(/\{\{\s*site\.title\s*\}\}/g, "Mike Oxhard")
-          .replace(/\{%\s*if\s+page\.title\s*%\}.*?\{%\s*endif\s*%\}/g, `${frontmatter.title} | Mike Oxhard`)
+          .replace(/\{%\s*if\s+page\.title\s*%\}.*?\{%\s*endif\s*%\}/g, `${article.title} | Mike Oxhard`)
           .replace(/\{\{\s*['"]\/'['"]\s*\|\s*relative_url\s*\}\}/g, '/')
           .replace(/\{\{\s*['"]\/assets\/style\.css['"].*?\}\}/g, '/assets/style.css')
           .replace(/\{\{\s*'\/'\s*\|\s*relative_url\s*\}\}/g, '/');
@@ -349,17 +386,16 @@ if (existsSync(italyIndexPath)) {
       for (const article of italyArticles) {
         const dateObj = new Date(article.date);
         const dateStr = dateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }).toUpperCase();
-        const category = article.tags[0] ? article.tags[0].toUpperCase() : 'ARTICLE';
 
         galleryArticleCards += `
         <article class="article-card">
           <a href="/italy/${article.slug}/">
-            <img src="${article.image}" alt="${article.title}" class="article-image">
+            ${article.image ? `<img src="${article.image}" alt="${article.title}" class="article-image">` : '<div class="article-image-placeholder"></div>'}
             <div class="article-meta">
               <span class="article-date">${dateStr}</span>
-              <span class="article-category">${category}</span>
             </div>
             <h2 class="article-title">${article.title}</h2>
+            ${article.subtitle ? `<p class="article-subtitle">${article.subtitle}</p>` : ''}
           </a>
         </article>
         `;

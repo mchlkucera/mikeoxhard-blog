@@ -60,6 +60,15 @@ layout: default
     aspect-ratio: 4 / 3;
   }
 
+  .article-image-placeholder {
+    width: 100%;
+    height: 250px;
+    border-radius: 6px;
+    display: block;
+    background-color: var(--bg-secondary);
+    margin-bottom: 0.3rem;
+  }
+
   .article-card:nth-child(1) .article-image {
     aspect-ratio: 4 / 3;
   }
@@ -77,9 +86,6 @@ layout: default
   }
 
   .article-meta {
-    display: flex;
-    gap: 0.4rem;
-    align-items: center;
     font-size: 0.85rem;
     color: var(--text-muted);
   }
@@ -90,22 +96,20 @@ layout: default
     font-weight: 500;
   }
 
-  .article-category {
-    border: 1.5px solid var(--text-muted);
-    border-radius: 14px;
-    padding: 0.1rem 0.4rem;
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-  }
-
   .article-title {
     font-size: 1.1rem;
     font-weight: 600;
     letter-spacing: -0.015em;
     line-height: 1.25;
     color: var(--text);
-    margin: 0.15rem 0 0 0;
+    margin: 0.15rem 0 0.3rem 0;
+  }
+
+  .article-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.3;
   }
 
   .article-card a {
