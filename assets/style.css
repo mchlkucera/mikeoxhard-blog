@@ -162,6 +162,20 @@ li {
   margin-bottom: 1rem;
 }
 
+.post-cover {
+  margin-left: -1rem;
+  margin-right: -1rem;
+  margin-bottom: 2rem;
+  width: calc(100% + 2rem);
+}
+
+.post-cover img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
 .post-content {
   line-height: 1.7;
 }
