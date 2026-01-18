@@ -149,7 +149,7 @@ li {
 .post-back-link {
   max-width: 60ch;
   margin: 0 auto 1.5rem auto;
-  padding: 0 1rem;
+  padding: 2rem 1rem 0;
 }
 
 .post-back-link a {

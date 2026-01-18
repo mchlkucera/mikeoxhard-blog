@@ -14,15 +14,10 @@ Like plants and ants and humans and stuff.
 
 By existing you accidentally put oxygen everywhere around. Which lead to ozone being created, which lead to more complicated stuff to be created down the line.
 
-Could you know this? Assuming you'd have a 1200 cm³ brain. Could you do a brainstorming with your team on how to make turtles exist? So that you could know you "made a difference" afterwards? Could you make a few million year long bet on the fact that making 
-How could you? Photosynthesis was not your "thing". 
+Could you know this? Assuming you'd have a 1200 cm³ brain. Could you do a brainstorming with your team on how to make turtles exist? So that you could know you "made a difference" afterwards? Could you make a few million year long bet on the chain of events that would lead to humans existing?
 
-instead of 
-So could you know what was the **meaning** of your life? I'd argue that no. Even if you had a 1200 cm³ brain.
-Looks like the true "meaning" of your life was way way beyond your scope of understanding. You weren't made to know it.
-Yet it was awesome! Like made-dogs-and-humans-possible type of awesome.
+Yet here you are, just trying to survive, creating all that. 
 
-So (maybe) the same goes for us hoomans. It is (maybe) just beyond your understanding. You know, our life, what it means and all that stuff.
-Any what do you know, someone living 3 billion years (or just months/hours) in the future will really goddamn appreciate what you are doing, right at this moment.
+What if this applies also for us, humans? What if all this meaning is just completely beyond our understanding? What if looking back, 3 billion years from now, all that we're doing now is so meaningful, whatever that means. What if some complex creatures down the line can appreciate what you're doing now in a way you cannot comprehend?
 
-I would argue cyanobacterias thinking "fuck this existence! What is meaning in all of this!" wouldn't be of any benefit. Now I know we have a big brain and stuff, but I still think we have a lesson to learn from cyanobacterias. Maybe it is enough to do something interesting, maybe create something, chill around our friends & family and call it a life!
+Would be existentialist cyanobacterias of any use? Like questioning their existence and being angry at the meaninglessness of it all? Or just like their purpose was photosynthesis which didn't make sense at the time, maybe our purpose is philosophising about all this? Which is what will enable greater fanciness of being for the ones to come after us? Or is it enough to just chill around with our friends & family and call it a life?
