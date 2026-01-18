@@ -8,6 +8,9 @@ tags:
   - history
 rating: 8
 ---
+
+![[Pasted image 20260118200903.png]]
+
 Tractors have revolutionized agriculture over the past century, transforming how we cultivate land and produce food. From steam-powered behemoths to GPS-guided precision machines, the journey of the tractor is a fascinating story of innovation and engineering.
 
 ## The Early Days
