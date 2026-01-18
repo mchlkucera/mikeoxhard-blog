@@ -8,6 +8,7 @@ tags:
   - travel
 rating: 8
 ---
+![[Pasted image 20260118200903.png]]
 
 **Summary:** + Indonéská masáž celého těla
 

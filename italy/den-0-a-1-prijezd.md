@@ -8,6 +8,7 @@ tags:
   - self-discovery
 rating: 8
 ---
+![[Pasted image 20260118201004.png]]
 
 **Summary:** Myšlenky vs turisti
 

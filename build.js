@@ -284,15 +284,18 @@ if (existsSync(italyIndexPath)) {
 
       // Process articles from INDEX.md
       for (const articleMeta of articlesYAML) {
-        // Convert title to filename
-        const filename = articleMeta.title.toLowerCase().replace(/\s+/g, '-') + '.md';
-        const filepath = join(italyDir, articleMeta.title + '.md');
+        // Generate slug from title
+        const slug = articleMeta.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
-        // Try to find the article file
+        // Try to find the article file by matching title in frontmatter
         let articleFile = null;
         const italyFiles = readdirSync(italyDir);
+
         for (const file of italyFiles) {
-          if (file.toLowerCase() === articleMeta.title.toLowerCase() + '.md') {
+          if (file.toLowerCase() === 'index.md' || file.toLowerCase().endsWith('.md') === false) continue;
+          const content = readFileSync(join(italyDir, file), 'utf-8');
+          const titleMatch = content.match(/^---\n([\s\S]*?)title:\s*(.+?)(?:\n|$)/i);
+          if (titleMatch && titleMatch[2].trim().replace(/^["']|["']$/g, '') === articleMeta.title) {
             articleFile = file;
             break;
           }
@@ -321,8 +324,6 @@ if (existsSync(italyIndexPath)) {
             imageUrl = `/italy/${articleMeta.image}`;
           }
         }
-
-        const slug = articleMeta.title.toLowerCase().replace(/\s+/g, '-');
 
         const article = {
           title: articleMeta.title,
@@ -386,14 +387,13 @@ if (existsSync(italyIndexPath)) {
       for (const article of italyArticles) {
         const dateObj = new Date(article.date);
         const dateStr = dateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }).toUpperCase();
+        const showDate = italyConfig.showDates !== 'false' && italyConfig.showDates !== false;
 
         galleryArticleCards += `
         <article class="article-card">
           <a href="/italy/${article.slug}/">
-            ${article.image ? `<img src="${article.image}" alt="${article.title}" class="article-image">` : '<div class="article-image-placeholder"></div>'}
-            <div class="article-meta">
-              <span class="article-date">${dateStr}</span>
-            </div>
+            ${article.image ? `<img src="${article.image}" alt="${article.title}" class="article-image">` : ''}
+            ${showDate ? `<div class="article-meta"><span class="article-date">${dateStr}</span></div>` : ''}
             <h2 class="article-title">${article.title}</h2>
             ${article.subtitle ? `<p class="article-subtitle">${article.subtitle}</p>` : ''}
           </a>
