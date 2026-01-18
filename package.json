@@ -4,7 +4,7 @@
   "description": "A minimal, Obsidian-compatible digital garden",
   "scripts": {
     "build": "node build.js",
-    "dev": "npm run build && cd _site && python3 -m http.server 8000"
+    "dev": "node build.js && cd _site && python3 -m http.server 8000"
   },
   "repository": {
     "type": "git",
