@@ -18,4 +18,5 @@ The concept of a personal vault is fascinating - it's like having a second brain
 I'm excited to see where this journey leads. Next, I want to explore [[Knowledge Management]] and how different systems compare.
 
 ## References
+
 - Inspired by [[References/Steph Ango]]
