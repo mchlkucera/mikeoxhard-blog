@@ -15,13 +15,28 @@ if (!existsSync(outputDir)) {
 const defaultLayout = readFileSync('_layouts/default.html', 'utf-8');
 const postLayout = readFileSync('_layouts/post.html', 'utf-8');
 const galleryLayout = readFileSync('_layouts/gallery.html', 'utf-8');
-const galleryPostLayout = readFileSync('_layouts/gallery-post.html', 'utf-8');
 
 // Copy assets
 if (!existsSync(join(outputDir, 'assets'))) {
   mkdirSync(join(outputDir, 'assets'), { recursive: true });
 }
 writeFileSync(join(outputDir, 'assets/style.css'), readFileSync('assets/style.css'));
+
+// Copy italy images
+const italyImageDir = join(outputDir, 'italy');
+if (existsSync('italy')) {
+  const italyFiles = readdirSync('italy');
+  italyFiles.forEach(file => {
+    if (/\.(png|jpg|jpeg|gif|webp|svg)$/i.test(file)) {
+      if (!existsSync(italyImageDir)) {
+        mkdirSync(italyImageDir, { recursive: true });
+      }
+      const source = join('italy', file);
+      const dest = join(italyImageDir, file);
+      writeFileSync(dest, readFileSync(source));
+    }
+  });
+}
 
 // Process markdown files (exclude README)
 const mdFiles = readdirSync('.').filter(f => f.endsWith('.md') && f !== 'README.md');
@@ -208,9 +223,9 @@ for (const page of pages) {
 }
 
 // Process Italy gallery directory
-const italyReadmePath = 'italy/README.md';
-if (existsSync(italyReadmePath)) {
-  const italyReadmeContent = readFileSync(italyReadmePath, 'utf-8');
+const italyIndexPath = 'italy/index.md';
+if (existsSync(italyIndexPath)) {
+  const italyReadmeContent = readFileSync(italyIndexPath, 'utf-8');
   const italyReadmeMatch = italyReadmeContent.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
 
   if (italyReadmeMatch) {
@@ -258,7 +273,9 @@ if (existsSync(italyReadmePath)) {
         let bodyWithoutImage = body;
         const imageMatch = body.match(/!\[\[(.+?)\]\]|!\[.*?\]\((.+?)\)/);
         if (imageMatch) {
-          imageUrl = imageMatch[1] || imageMatch[2];
+          const rawImagePath = imageMatch[1] || imageMatch[2];
+          // Resolve image path relative to italy folder
+          imageUrl = /^(https?:|\/|data:)/.test(rawImagePath) ? rawImagePath : `/italy/${rawImagePath}`;
           bodyWithoutImage = body.replace(/!\[\[(.+?)\]\]|!\[.*?\]\((.+?)\)/, '').trim();
         }
 
@@ -301,12 +318,15 @@ if (existsSync(italyReadmePath)) {
 
         const featuredImageHtml = imageUrl ? `<img src="${imageUrl}" alt="${frontmatter.title}" class="article-featured-image">` : '';
 
-        let articleHtml = galleryPostLayout
+        // Create article wrapper with featured image and back link
+        const backLinkHtml = '<div style="max-width: 60ch; margin: 0 auto; padding: 2rem 1rem 0;"><a href="/italy/" style="display: inline-block; color: var(--text-muted); text-decoration: none; font-size: 0.9rem; margin-bottom: 1.5rem;">← Back to Italy</a></div>';
+        const featuredImageWrapper = imageUrl ? `<img src="${imageUrl}" alt="${frontmatter.title}" style="width: 100%; max-width: 900px; margin: 2rem auto; display: block; border-radius: 8px; padding: 0 1rem; box-sizing: border-box;">` : '';
+
+        let articleHtml = postLayout
           .replace(/^---\n[\s\S]*?\n---\n/, '') // Remove frontmatter
-          .replace('{{ page.featured_image }}', featuredImageHtml)
           .replace(/\{\{\s*page\.title\s*\}\}/g, frontmatter.title)
           .replace(/\{\{\s*page\.date.*?\}\}/g, frontmatter.date ? new Date(frontmatter.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : '')
-          .replace('{{ content }}', `<p>${htmlContent}</p>`)
+          .replace('{{ content }}', `${backLinkHtml}${featuredImageWrapper}<p>${htmlContent}</p>`)
           .replace(/\{%\s*if\s+[\s\S]*?%\}/g, '')
           .replace(/\{%\s*endif\s*%\}/g, '')
           .replace(/\{%\s*for\s+[\s\S]*?%\}/g, '')
