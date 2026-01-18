@@ -14,7 +14,7 @@ Like plants and ants and humans and stuff.
 
 By existing you accidentally put oxygen everywhere around. Which lead to ozone being created, which lead to more complicated stuff to be created down the line.
 
-Could you know this? Assuming you'd have a 1200 cm³ brain. Could you do a brainstorming with your team on how to make turtles exist? So that you could know you "made a difference" afterwards? Could you make a few million year long 
+Could you know this? Assuming you'd have a 1200 cm³ brain. Could you do a brainstorming with your team on how to make turtles exist? So that you could know you "made a difference" afterwards? Could you make a few million year long bet on the fact that making 
 How could you? Photosynthesis was not your "thing". 
 
 instead of 
