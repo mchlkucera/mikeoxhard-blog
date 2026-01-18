@@ -2,14 +2,7 @@
 layout: post
 title: "3, 4 - (Zvracím) V nové práci"
 date: 2022-08-12
-tags:
-  - italy
-  - work
-  - challenges
-rating: 7
 ---
-
-**Summary:** A to hned 3x
 
 ### Přijímají mě hned v druhé restauraci do které dávám CV
 

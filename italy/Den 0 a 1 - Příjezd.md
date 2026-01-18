@@ -2,15 +2,9 @@
 layout: post
 title: Den 0 a 1 - Příjezd
 date: 2022-08-10
-tags:
-  - italy
-  - travel
-  - self-discovery
-rating: 8
 ---
-![[Pasted image 20260118201004.png]]
 
-**Summary:** Myšlenky vs turisti
+![Příjezd do Říma - Trevi Fountain selfie](../attachments/den-0-1-cover.jpg)
 
 ## Proč jedu do Říma? Londýn.
 

@@ -2,14 +2,7 @@
 layout: post
 title: "4-6: Ve dvou hotelech za jednu noc"
 date: 2022-08-15
-tags:
-  - italy
-  - travel
-  - adventure
-rating: 8
 ---
-
-**Summary:** + zlobí se na mě nadřízení
 
 ### Brazilec > Peníze
 

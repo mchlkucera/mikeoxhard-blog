@@ -2,11 +2,6 @@
 layout: post
 title: "19-30: Vyhozen z práce"
 date: 2022-09-01
-tags:
-  - italy
-  - work
-  - family
-rating: 8
 ---
 
 ## Ségra a nudle

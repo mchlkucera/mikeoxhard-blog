@@ -2,15 +2,8 @@
 layout: post
 title: "2, 3 - Hledám práci"
 date: 2022-08-11
-tags:
-  - italy
-  - work
-  - travel
-rating: 8
 ---
 ![[Pasted image 20260118200903.png]]
-
-**Summary:** + Indonéská masáž celého těla
 
 ## DEN 2
 

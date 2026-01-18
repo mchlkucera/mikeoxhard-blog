@@ -2,14 +2,7 @@
 layout: post
 title: "6-8: Život barmana"
 date: 2022-08-16
-tags:
-  - italy
-  - work
-  - reflection
-rating: 8
 ---
-
-**Summary:** Kolik dostávám zaplaceno? Zůstávám do prosince
 
 ### Pár myšlenek o barmanství
 
