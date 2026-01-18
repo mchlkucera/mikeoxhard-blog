@@ -273,12 +273,40 @@ img {
 }
 
 .italy-featured-image {
-  width: 90vw;
-  max-width: 100%;
-  margin: 2rem -1.5rem 2rem;
+  width: calc(100% + 300px);
+  margin-left: -150px;
+  margin-right: -150px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   display: block;
   border-radius: 6px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: center;
+}
+
+/* Italy article responsive */
+@media (max-width: 768px) {
+  .italy-back-link {
+    text-align: center;
+    display: block;
+  }
+
+  .post-header {
+    text-align: center;
+  }
+
+  .post-header h1 {
+    text-align: center;
+  }
+
+  .post-meta {
+    text-align: center;
+  }
+
+  .italy-featured-image {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }

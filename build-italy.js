@@ -134,21 +134,21 @@ const html = `<!DOCTYPE html>
       margin-bottom: 0.8rem;
     }
 
-    /* Varied aspect ratios */
+    /* All square images */
     .article-card:nth-child(1) .article-image {
-      aspect-ratio: 4 / 3;
+      aspect-ratio: 1 / 1;
     }
 
     .article-card:nth-child(2) .article-image {
-      aspect-ratio: 4 / 5;
+      aspect-ratio: 1 / 1;
     }
 
     .article-card:nth-child(3) .article-image {
-      aspect-ratio: 4 / 4;
+      aspect-ratio: 1 / 1;
     }
 
     .article-card:nth-child(n+4) .article-image {
-      aspect-ratio: 4 / 3;
+      aspect-ratio: 1 / 1;
     }
 
     .article-meta {
