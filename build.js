@@ -278,7 +278,8 @@ const defaultDir = './default';
 const defaultFiles = fs.readdirSync(defaultDir).filter(f => f.endsWith('.md'));
 
 defaultFiles.forEach(fileName => {
-  const articleName = fileName.replace('.md', '').toLowerCase().replace(/\s+/g, '-').replace(/['']/g, '');
+  const articleTitle = fileName.replace('.md', ''); // Keep original title from filename
+  const articleName = articleTitle.toLowerCase().replace(/\s+/g, '-').replace(/['']/g, '');
   const articlePath = path.join(defaultDir, fileName);
   if (fs.existsSync(articlePath)) {
     const articleContent = fs.readFileSync(articlePath, 'utf-8');
@@ -314,7 +315,7 @@ defaultFiles.forEach(fileName => {
       articleHtml = articleHtml.replace('<div class="post-cover">\n    <!-- Cover image will be inserted here -->\n  </div>', `<div class="post-cover">\n    ${coverImage}\n  </div>`);
       articleHtml = articleHtml.replace('<div class="post-content">\n    <!-- Content without cover image -->\n  </div>', `<div class="post-content">\n    ${contentWithoutCover}\n  </div>`);
       articleHtml = defaultLayout.replace('{{ content }}', articleHtml);
-      articleHtml = renderLiquid(articleHtml, { title: frontmatter.title || articleName, date: frontmatter.date });
+      articleHtml = renderLiquid(articleHtml, { title: frontmatter.title || articleTitle, date: frontmatter.date });
 
       fs.mkdirSync(`${siteDir}/default/${articleName}`, { recursive: true });
       fs.writeFileSync(`${siteDir}/default/${articleName}/index.html`, articleHtml);
