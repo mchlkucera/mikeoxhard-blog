@@ -120,7 +120,7 @@ const html = `<!DOCTYPE html>
     .article-card {
       display: flex;
       flex-direction: column;
-      gap: 0.3rem;
+      gap: 0;
       margin-bottom: 0;
     }
 
@@ -131,6 +131,7 @@ const html = `<!DOCTYPE html>
       display: block;
       background-color: var(--bg-secondary);
       aspect-ratio: 4 / 3;
+      margin-bottom: 0.8rem;
     }
 
     /* Varied aspect ratios */
@@ -201,6 +202,8 @@ const html = `<!DOCTYPE html>
     @media (max-width: 640px) {
       .articles-grid {
         grid-template-columns: repeat(1, 1fr);
+        margin-left: 0;
+        margin-right: auto;
       }
 
       .italy-header {

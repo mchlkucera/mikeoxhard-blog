@@ -273,9 +273,9 @@ img {
 }
 
 .italy-featured-image {
-  width: 100%;
-  max-width: calc(60ch + 2rem);
-  margin: 2rem calc(-50vw + 50%) 2rem;
+  width: 90vw;
+  max-width: 100%;
+  margin: 2rem -1.5rem 2rem;
   display: block;
   border-radius: 6px;
   aspect-ratio: 1 / 1;

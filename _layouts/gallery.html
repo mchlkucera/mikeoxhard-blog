@@ -56,23 +56,23 @@ layout: default
     object-fit: cover;
     border-radius: 6px;
     display: block;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.8rem;
   }
 
   .article-card:nth-child(1) .article-image {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 1 / 1;
   }
 
   .article-card:nth-child(2) .article-image {
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 1 / 1;
   }
 
   .article-card:nth-child(3) .article-image {
-    aspect-ratio: 4 / 4;
+    aspect-ratio: 1 / 1;
   }
 
   .article-card:nth-child(n+4) .article-image {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 1 / 1;
   }
 
   .article-meta {
@@ -121,6 +121,8 @@ layout: default
   @media (max-width: 640px) {
     .articles-grid {
       grid-template-columns: repeat(1, 1fr);
+      margin-left: 0;
+      margin-right: auto;
     }
 
     .gallery-header h1 {
