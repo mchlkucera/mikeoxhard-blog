@@ -179,7 +179,6 @@ li {
 }
 
 /* Italy article - constrain all text elements to same width */
-main:has(.italy-back-link) .italy-back-link,
 main:has(.italy-back-link) .post-header,
 main:has(.italy-back-link) .post-header h1,
 main:has(.italy-back-link) p,

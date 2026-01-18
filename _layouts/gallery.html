@@ -138,6 +138,20 @@ layout: default
   </div>
 
   <div class="articles-grid">
-    {{ content }}
+    {% for article in site.italy %}
+      {% if article.path != 'italy/index.md' %}
+        {% assign dateStr = article.date | date: "%b %d, %Y" %}
+        <article class="article-card">
+          <a href="{{ article.url }}">
+            {% if article.image %}<img src="/assets/{{ article.image }}" alt="{{ article.title }}" class="article-image">{% endif %}
+            <div class="article-meta">
+              <span class="article-date">{{ dateStr | upcase }}</span>
+            </div>
+            <h2 class="article-title">{{ article.title }}</h2>
+            {% if article.subtitle %}<p class="article-subtitle">{{ article.subtitle }}</p>{% endif %}
+          </a>
+        </article>
+      {% endif %}
+    {% endfor %}
   </div>
 </div>

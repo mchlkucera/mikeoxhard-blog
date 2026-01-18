@@ -1,24 +1,20 @@
-site_title: Mike Oxhard
+title: Mike Oxhard
 description: Mike Oxhard's blog and thoughts
 url: https://mikeoxhard.com
+github_url: https://github.com/mchlkucera
+github_username: mchlkucera
 
 # Collections for organizing content
 collections:
-  categories:
-    output: false
-    label: "Categories"
-  articles:
-    output: false
-    label: "Articles"
-
-# Include directories that should be processed
-include:
-  - italy
-  - default
+  italy:
+    output: true
+    permalink: /italy/:path/
+  default:
+    output: true
+    permalink: /default/:path/
 
 # Build settings
 markdown: kramdown
-permalink: /:collection/:path/
 
 # Exclude directories from Jekyll
 exclude:
@@ -27,3 +23,8 @@ exclude:
   - node_modules
   - vendor
   - .DS_Store
+  - Gemfile
+  - Gemfile.lock
+  - build.js
+  - build-italy.js
+  - build-italy-articles.js
