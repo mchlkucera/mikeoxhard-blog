@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "A minimal, Obsidian-compatible digital garden",
   "scripts": {
-    "build": "bundle exec jekyll build",
-    "dev": "bundle exec jekyll serve"
+    "build": "node build.js",
+    "dev": "npm run build && cd _site && python3 -m http.server 8000"
   },
   "repository": {
     "type": "git",

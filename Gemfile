@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 3.8"
-gem "kramdown", "~> 1.17"
+gem "jekyll", "~> 4.3"
+gem "webrick", "~> 1.8"
 
 group :jekyll_plugins do
 end
