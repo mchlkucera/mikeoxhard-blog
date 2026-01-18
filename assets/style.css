@@ -153,13 +153,13 @@ li {
 }
 
 .post-back-link a {
-  color: var(--link);
+  color: var(--text);
   text-decoration: none;
   font-size: 0.95rem;
 }
 
 .post-back-link a:hover {
-  color: var(--link-hover);
+  color: var(--link);
 }
 
 .post-header {

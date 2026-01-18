@@ -187,8 +187,8 @@ files.forEach(file => {
   }
 });
 
-// Sort by date descending
-italyArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
+// Sort by date ascending (oldest first) - special for Italy category
+italyArticles.sort((a, b) => new Date(a.date) - new Date(b.date));
 
 // Generate article cards
 let cards = '';
