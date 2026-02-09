@@ -1,15 +1,20 @@
 {
   "name": "mikeoxhard-blog",
+  "type": "module",
   "version": "1.0.0",
   "description": "A minimal, Obsidian-compatible digital garden",
   "scripts": {
-    "build": "node build.js",
-    "dev": "node build.js && cd _site && python3 -m http.server 8000"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/mchlkucera/mikeoxhard-blog"
   },
   "author": "Mike Oxhard",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "astro": "^5.3.0"
+  }
 }

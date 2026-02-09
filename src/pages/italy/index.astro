@@ -1,0 +1,60 @@
+---
+import GalleryLayout from '../../layouts/GalleryLayout.astro';
+import { getCollection } from 'astro:content';
+
+// Get all italy articles except index.md
+const italyArticles = await getCollection('italy', ({ id }) => id !== 'index.md');
+
+// Sort by date ascending
+const sortedArticles = italyArticles.sort((a, b) => {
+  const dateA = a.data.date ? new Date(a.data.date).getTime() : 0;
+  const dateB = b.data.date ? new Date(b.data.date).getTime() : 0;
+  return dateA - dateB;
+});
+
+// Helper to get title from filename
+const getTitle = (id: string) => {
+  return id.replace(/\.md$/, '');
+};
+
+// Helper to get slug from filename
+const getSlug = (id: string) => {
+  return id.replace(/\.md$/, '').toLowerCase().replace(/\s+/g, '-');
+};
+
+// Helper to extract first image from markdown content
+const extractCoverImage = async (entry: any) => {
+  const { body } = entry;
+  const imageMatch = body.match(/!\[([^\]]*)\]\(([^)]+)\)/);
+  if (imageMatch) {
+    return imageMatch[2];
+  }
+  return null;
+};
+
+// Build articles array with cover images
+const articles = await Promise.all(sortedArticles.map(async (article) => {
+  const title = getTitle(article.id);
+  const slug = getSlug(article.id);
+  const coverImage = await extractCoverImage(article);
+
+  return {
+    title,
+    date: article.data.date ? new Date(article.data.date) : new Date(),
+    image: coverImage,
+    url: `/italy/${slug}/`,
+    subtitle: article.data.subtitle,
+  };
+}));
+
+// Get gallery metadata from index.md
+const indexEntry = await getCollection('italy', ({ id }) => id === 'index.md');
+const galleryTitle = indexEntry[0]?.data.title || 'Itálie 2022';
+const gallerySubtitle = indexEntry[0]?.data.subtitle || '';
+---
+
+<GalleryLayout
+  title={galleryTitle}
+  subtitle={gallerySubtitle}
+  articles={articles}
+/>

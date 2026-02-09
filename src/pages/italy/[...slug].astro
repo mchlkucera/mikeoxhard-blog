@@ -1,0 +1,56 @@
+---
+import PostLayout from '../../layouts/PostLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const italyArticles = await getCollection('italy', ({ id }) => id !== 'index.md');
+
+  return italyArticles.map((entry) => {
+    const slug = entry.id.replace(/\.md$/, '').toLowerCase().replace(/\s+/g, '-');
+    return {
+      params: { slug },
+      props: { entry },
+    };
+  });
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+// Get title from filename
+const title = entry.id.replace(/\.md$/, '');
+
+// Extract cover image from content
+const extractCoverImage = (body: string) => {
+  const imageMatch = body.match(/!\[([^\]]*)\]\(([^)]+)\)/);
+  if (imageMatch) {
+    return { alt: imageMatch[1], src: imageMatch[2] };
+  }
+  return null;
+};
+
+const coverImage = extractCoverImage(entry.body);
+
+// Remove cover image from content by creating a custom renderer
+// We'll handle this in the component
+---
+
+<PostLayout
+  title={title}
+  date={entry.data.date ? new Date(entry.data.date) : undefined}
+  backLink={{ href: '/italy/', label: '\u2190 Back to Italy' }}
+  coverImage={coverImage}
+  isItaly={true}
+>
+  <Content />
+</PostLayout>
+
+<style is:global>
+  /* Hide the first image in italy articles since we show it as cover */
+  .post-content > p:first-child:has(img:only-child) {
+    display: none;
+  }
+  .post-content > p:first-child > img:only-child {
+    display: none;
+  }
+</style>

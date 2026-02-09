@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+// Get default articles
+const defaultArticles = await getCollection('default');
+const sortedArticles = defaultArticles.sort((a, b) => {
+  const dateA = a.data.date ? new Date(a.data.date).getTime() : 0;
+  const dateB = b.data.date ? new Date(b.data.date).getTime() : 0;
+  return dateB - dateA;
+});
+
+const formatDate = (date: Date) => {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  return `${year} \u00B7 ${month}`;
+};
+
+const getSlug = (id: string) => {
+  return id.replace(/\.md$/, '').toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+};
+---
+
+<BaseLayout>
+  <div class="home">
+    <section class="categories-section">
+      <h2>Categories</h2>
+      <ul class="category-list">
+        <li class="category-item">
+          <a href="/italy/">Itálie 2022</a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="articles-section">
+      <h2>Articles</h2>
+      <ul class="note-list">
+        {sortedArticles.map((article) => {
+          const title = article.data.title || article.id.replace(/\.md$/, '');
+          const slug = getSlug(article.id);
+          return (
+            <li class="note-item">
+              {article.data.date && (
+                <div class="note-date">
+                  {formatDate(new Date(article.data.date))}
+                </div>
+              )}
+              <h2 class="note-title">
+                <a href={`/default/${slug}/`}>{title}</a>
+              </h2>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+  </div>
+</BaseLayout>
