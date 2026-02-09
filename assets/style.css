@@ -309,6 +309,23 @@ img {
   margin: 1rem 0;
 }
 
+/* Figure with caption */
+figure {
+  margin: 2rem 0;
+}
+
+figure img {
+  margin: 0;
+}
+
+figcaption {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  opacity: 0.8;
+  margin-top: 0.3rem;
+  line-height: 1.4;
+}
+
 /* Italy article styles */
 .back-link-wrapper {
   max-width: 60ch;

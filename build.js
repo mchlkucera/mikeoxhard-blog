@@ -242,15 +242,15 @@ italyArticles.forEach(article => {
     .replace(/^### (.*?)$/gm, '<h3>$1</h3>')
     .replace(/^## (.*?)$/gm, '<h2>$1</h2>')
     .replace(/^# (.*?)$/gm, '<h1>$1</h1>')
-    .replace(/!\[(.*?)\]\((\.\.\/)?assets\/([^)]+)\)/g, '<img src="/assets/$3" alt="$1">')
-    .replace(/!\[(.*?)\]\(([^)]+)\)/g, '<img src="$2" alt="$1">')
+    .replace(/!\[(.*?)\]\((\.\.\/)?assets\/([^)]+)\)/g, '<figure><img src="/assets/$3" alt="$1"><figcaption>$1</figcaption></figure>')
+    .replace(/!\[(.*?)\]\(([^)]+)\)/g, '<figure><img src="$2" alt="$1"><figcaption>$1</figcaption></figure>')
     .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2">$1</a>')
     .split('\n\n')
     .map(p => {
       const trimmed = p.trim();
       if (!trimmed) return '';
       // Don't wrap block elements in paragraphs
-      if (trimmed.startsWith('<h') || trimmed.startsWith('<img') || trimmed.startsWith('<div')) {
+      if (trimmed.startsWith('<h') || trimmed.startsWith('<figure') || trimmed.startsWith('<div')) {
         return trimmed;
       }
       return `<p>${trimmed}</p>`;
@@ -258,10 +258,10 @@ italyArticles.forEach(article => {
     .filter(p => p)
     .join('\n');
 
-  // Extract first image for cover
-  const firstImageMatch = htmlContent.match(/<img[^>]*>/);
-  const coverImage = firstImageMatch ? firstImageMatch[0] : '';
-  const contentWithoutCover = coverImage ? htmlContent.replace(firstImageMatch[0], '') : htmlContent;
+  // Extract first figure (with image) for cover
+  const firstFigureMatch = htmlContent.match(/<figure>.*?<\/figure>/);
+  const coverImage = firstFigureMatch ? firstFigureMatch[0] : '';
+  const contentWithoutCover = coverImage ? htmlContent.replace(firstFigureMatch[0], '') : htmlContent;
 
   const backLink = '<a href="/italy/" class="italy-back-link">← Back to Italy</a>';
 
@@ -306,15 +306,15 @@ defaultFiles.forEach(fileName => {
         .replace(/^### (.*?)$/gm, '<h3>$1</h3>')
         .replace(/^## (.*?)$/gm, '<h2>$1</h2>')
         .replace(/^# (.*?)$/gm, '<h1>$1</h1>')
-        .replace(/!\[(.*?)\]\((\.\.\/)?assets\/([^)]+)\)/g, '<img src="/assets/$3" alt="$1">')
-        .replace(/!\[(.*?)\]\(([^)]+)\)/g, '<img src="$2" alt="$1">')
+        .replace(/!\[(.*?)\]\((\.\.\/)?assets\/([^)]+)\)/g, '<figure><img src="/assets/$3" alt="$1"><figcaption>$1</figcaption></figure>')
+        .replace(/!\[(.*?)\]\(([^)]+)\)/g, '<figure><img src="$2" alt="$1"><figcaption>$1</figcaption></figure>')
         .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2">$1</a>')
         .split('\n\n')
         .map(p => {
           const trimmed = p.trim();
           if (!trimmed) return '';
           // Don't wrap block elements in paragraphs
-          if (trimmed.startsWith('<h') || trimmed.startsWith('<img') || trimmed.startsWith('<div')) {
+          if (trimmed.startsWith('<h') || trimmed.startsWith('<figure') || trimmed.startsWith('<div')) {
             return trimmed;
           }
           return `<p>${trimmed}</p>`;
@@ -322,10 +322,10 @@ defaultFiles.forEach(fileName => {
         .filter(p => p)
         .join('\n');
 
-      // Extract first image for cover
-      const firstImageMatch = htmlContent.match(/<img[^>]*>/);
-      const coverImage = firstImageMatch ? firstImageMatch[0] : '';
-      const contentWithoutCover = coverImage ? htmlContent.replace(firstImageMatch[0], '') : htmlContent;
+      // Extract first figure (with image) for cover
+      const firstFigureMatch = htmlContent.match(/<figure>.*?<\/figure>/);
+      const coverImage = firstFigureMatch ? firstFigureMatch[0] : '';
+      const contentWithoutCover = coverImage ? htmlContent.replace(firstFigureMatch[0], '') : htmlContent;
 
       let articleHtml = postLayout.replace('<div class="post-back-link">\n    <!-- Back link will be inserted here -->\n  </div>', '<div class="post-back-link"></div>');
       articleHtml = articleHtml.replace('<div class="post-cover">\n    <!-- Cover image will be inserted here -->\n  </div>', `<div class="post-cover">\n    ${coverImage}\n  </div>`);
