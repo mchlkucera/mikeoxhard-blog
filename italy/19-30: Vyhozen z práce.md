@@ -11,7 +11,7 @@ Navštěvuje mě sestřička, se kterou bydlím dvě noci v hotelu, kde si uží
 
 ![Fotka z prohlídky kolem kolosea. Zapomněl jsem jméno, význam i historii původní budovy. Minimálně to jsou moc pěkné sloupy.](../assets/19-30-colosseum-building.jpg)
 
-![Děláme domácí těstoviny, zjišťuju že jsou pouze z mouky a vajíčka což je z nějakého důvodu šokující. Poté nudle papáme. Vlastnoručně udělané Raviolli zařazuji mezi jedny z nejlepších jídel, které jsem kdy měl.](https://prod-files-secure.s3.us-west-2.amazonaws.com/2e2d5d81-8fa9-4b93-989a-d5ba3a4ef7d3/a1560f86-7d6c-4a34-81f6-9a9c9d327682/IMG-20220901-WA0001.jpg)
+![Děláme domácí těstoviny, zjišťuju že jsou pouze z mouky a vajíčka což je z nějakého důvodu šokující. Poté nudle papáme. Vlastnoručně udělané Raviolli zařazuji mezi jedny z nejlepších jídel, které jsem kdy měl.](../assets/19-30-pasta-making.jpg)
 
 ## Setkání s dobrodruhy
 
@@ -25,7 +25,7 @@ Dostáváme se k němu domů a asi poprvé v životě spím vyloženě na zemi. 
 
 Přes Yes theory chat se domlouváme na večeři s pár náhodnými lidmi a konverzujeme. Probíráme kultury, proč jsou Američani hloupí a tak dále. Turek vysvětluje, že má plno příležitostí na sehnání investorů a že má hodně peněz, protože v Turecku založil firmu na podporu lokálních podnikatelek, což je teď v Turecku trend. Takže stačí nakupovat produkty od lokálních výrobkyň a prodat je za 9x více. Říká mi, že mi závidí, že si můžu dovolit jen tak jet do zahraničí dělat barmana. To on nemůže, protože je příliš úspěšný podnikatel.
 
-![Mexičan, Turek, Ital, Němec, Američan a toho posledního neznám](https://prod-files-secure.s3.us-west-2.amazonaws.com/2e2d5d81-8fa9-4b93-989a-d5ba3a4ef7d3/5efabf90-1e03-40df-afd6-ed788bd93539/IMG-20220905-WA0000.jpg)
+![Mexičan, Turek, Ital, Němec, Američan a toho posledního neznám](../assets/19-30-group-dinner.jpg)
 
 ## Nový hostel
 
@@ -35,21 +35,21 @@ Nacházím parádní hostel "Yellowsquare Rome", je tu plno mladých, levný bar
 
 V práci se neděje nic nového, nikdo neříká nic nového, všichni mají stejně negativní/pozitivní emoce, jaké mají vždycky, a mají stále stejné problémy.
 
-![Jeden den v práci je okořeněn tím, že musíme přesunout asi 200 krabicí vín, a ve sklepě je tak vedro, že všichni pracujeme bez trika. Tak jsem vám udělal rychlé foto. Zleva: kdosi z kuchyně, kdosi odkudsi jinud, Francesco, Borat, Ibrahim](https://prod-files-secure.s3.us-west-2.amazonaws.com/2e2d5d81-8fa9-4b93-989a-d5ba3a4ef7d3/314e0861-53cd-48a0-bd8c-3e642d5a5c27/IMG20220906184603.jpg)
+![Jeden den v práci je okořeněn tím, že musíme přesunout asi 200 krabicí vín, a ve sklepě je tak vedro, že všichni pracujeme bez trika. Tak jsem vám udělal rychlé foto. Zleva: kdosi z kuchyně, kdosi odkudsi jinud, Francesco, Borat, Ibrahim](../assets/19-30-wine-cellar.jpg)
 
-![Práci mi zpříjemňují některé kreativní úkoly jako servírování dezertů, což mě celkem baví. Tady tenhle se mi povedl. Je to "Ying-ying choco-choco tiramisu"](https://prod-files-secure.s3.us-west-2.amazonaws.com/2e2d5d81-8fa9-4b93-989a-d5ba3a4ef7d3/5178510d-5ac8-44ba-b472-b7c9f118a62e/IMG20220906203322.jpg)
+![Práci mi zpříjemňují některé kreativní úkoly jako servírování dezertů, což mě celkem baví. Tady tenhle se mi povedl. Je to "Ying-ying choco-choco tiramisu"](../assets/19-30-tiramisu.jpg)
 
 ## Jsem nemocen
 
 Jak jsem zmínil, po návštěvě hotelu jsem jakýs nachlazený a v úterý, 6. 9. se probouzím s ucpaným nosem, suchým kašlem a chutí celý den ležet v posteli. Píšu Utschovi (což je jediný z práce, na koho mám kontakt), že mám kašel a že mi není dobře, tak jestli mám chodit do práce.
 
-![Screenshot konverzace s Utschem](https://prod-files-secure.s3.us-west-2.amazonaws.com/2e2d5d81-8fa9-4b93-989a-d5ba3a4ef7d3/ae5a6b04-d0be-484b-8f29-9abb3fd7d2ac/Untitled.png)
+![Screenshot konverzace s Utschem](../assets/19-30-chat-screenshot-1.png)
 
 Uvědomuji si důležitost zprávy, tak všechno pečlivě překládám v Google překladači a kontroluji, že vyjadřuji co chci vyjádřit. Utscho odepisuje (viz obrázek výše) "Dnes nechoď do práce", "Přijď na Náměstí Vittorio". Asi nepochopil situaci, tak mu ještě jednou píšu, že mi nejde o vyhýbání se práci, ale že si akorát nejsem jistý jestli je dobrý nápad chodit do práce když kašlu (protože covid..)
 
 Utscho píše že Vincenzo (šéf) říká, že nemám chodit. A potom přichází zvrat.
 
-![Screenshot konverzace pokračování](https://prod-files-secure.s3.us-west-2.amazonaws.com/2e2d5d81-8fa9-4b93-989a-d5ba3a4ef7d3/6b786c58-06e5-4a68-a538-d4b07e96e26e/Untitled.png)
+![Screenshot konverzace pokračování](../assets/19-30-chat-screenshot-2.png)
 
 Když potvrzuju zprávu a Utscho neodepisuje, tak se ptám, jestli se něco stalo. On odepisuje:
 
@@ -65,13 +65,13 @@ Jdu tedy zpátky na hostel a potkávám se s Američanem z Kalifornie (21) a Ame
 
 Dáváme si tři drinky a tři bruschetty a platím 15€ (což znamená že jsem dostal pořádnou slevu) (od paní Marcelly). Potom jdeme zpět do Yellow baru a otestovat místní klub. Je to nic moc. Po sléze zjišťujeme, že nám na pokoji přibyla nějaká holčina z Londýna. Ta říká, že dostala slevu, protože zemřela Králova.
 
-![Dali jsme si Espresso martini, Caipirosku a Coconut mojito. Coconut mojito byl za mě winner.](https://prod-files-secure.s3.us-west-2.amazonaws.com/2e2d5d81-8fa9-4b93-989a-d5ba3a4ef7d3/32fdc805-a6fb-47c1-9577-19b1b835ae5e/IMG20220908235320.jpg)
+![Dali jsme si Espresso martini, Caipirosku a Coconut mojito. Coconut mojito byl za mě winner.](../assets/19-30-cocktails.jpg)
 
 ## Volný den
 
 Giulia mě pozvala na vejlet k jezeru s jejími rodiči. Jedeme malinkatým, starším Fiatem 600 a je to naprosto kouzelný výlet. Nikde nikdo, plácáme se u jezera, dostávám panini s proscuittem, pronajímáme šlapací lodičku (platím!), dáváme si gellato a snažíme se komunikovat. Oni na mě mluví jednoduchou italštinou, já mám strašně moc otázek jak co v tomhle jazyce funguje. Jsem trochu nervózní, že mám celý den dělat nic.
 
-![Jezero](https://prod-files-secure.s3.us-west-2.amazonaws.com/2e2d5d81-8fa9-4b93-989a-d5ba3a4ef7d3/a44aa0dd-d125-4d20-902c-a40983bae4f5/IMG20220909155744.jpg)
+![Jezero](../assets/19-30-lake.jpg)
 
 Večer mě zvou na aperitif, protože Giuliin tatínek (Nicollas) má dneska narozeniny. Před aperitivem volám do restaurace, Marcella zvedá, ptá se mě kdy odjíždím, říkám že ze týden a ona mi říká, že tak to ať už nechodím. Je to trochu smutně příliš krátké rozloučení, ale jsem rád že mám více času na poznávání Říma.
 
@@ -79,7 +79,7 @@ Nicolassovi kupuju mu bílé víno Fallanghino a zůstávám na aperitif. Říka
 
 V Yellow je všechno zabráno, takže spím na gaučíku.
 
-![Na gaučíku jsem se vyspal hůře než u Fedeho na zemi](https://prod-files-secure.s3.us-west-2.amazonaws.com/2e2d5d81-8fa9-4b93-989a-d5ba3a4ef7d3/57484e92-2093-42f5-a0dd-28ed9b09de08/IMG20220910023247.jpg)
+![Na gaučíku jsem se vyspal hůře než u Fedeho na zemi](../assets/19-30-couch.jpg)
 
 ## Co John?
 
