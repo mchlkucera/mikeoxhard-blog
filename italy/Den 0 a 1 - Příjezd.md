@@ -53,6 +53,8 @@ Kromě turistů mi kříží cestu jen moje vlastní hlava. Když nejsem rozptý
 
 Kotvím v náhodné kavárně kde si dávám il tè verde, sepisuju CV, a objednávám hostel na dnešní noc. Kupuju si rajče, chleba, sýr a mandla a jdu si to spapat do parku. Mezitím volám s babičkou které se poprvé za její život daří poslat GIF přes Whatsapp společně s mystickou zprávou! Přikládám důkaz. Mám z toho radost.
 
+![Babička poslala GIF přes WhatsApp](../assets/den-0-1-babicka-gif.jpg)
+
 Na hostel jedu na elektrickém kole a dostávám odměnu ve formě toho nejmagičtějšího západu slunce ever. Zjišťuju že to, co jsem si zarezervoval není tak hostel jako spíš náhodný byt, který vlastní dva indové, ve kterém spí hodně lidí. Za peníze.
 
 Sedám si na postel a modlí se vedle mě Maročan. Ptám se, jestli při každé modlitbě opakuje ta stejná slova. Říká, že ne. Základ je stejný, ale může si to upravovat. Když se dotýká hlavou země, tak může boha o různé věci prosit, žádat a tak dále. Není to trochu sobecké? Říká, že je divné, že Evropani nejsou vychovávání k náboženství. Potkávám Australany, Španěly a Iry a hrajeme městečko palermo. Dostávám pivo, rozdávám mandle a dvě hry po sobě jsem ve vítězném týmu. A potom jdu spát.

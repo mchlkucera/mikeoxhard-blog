@@ -7,9 +7,13 @@ date: 2022-08-24
 
 Minulý příspěvek jsem dopsal ve 02:30 a jak jsem psal - rozhodl jsem se, že místo 40min cesty k Johnovi tam a 40min zpátky si najdu nějaký hotel v centru. Obešel jsem 4 hotely, 3 z nich byli plné, čtvrtý byl za 200€/noc. V pátém Hotelu Miami ale měli dostupnou jednu malou místnost. Tam jsem se tedy 8 hodin vyspinkal a ráno šel pěšky do práce (6 minut chůze 🥰)
 
+![Hotel Miami - konečně pořádný spánek](../assets/13-18-img-1.jpg)
+
 ## Mám se dobře, neobědvám a potom obědvám
 
 Poslední příspěvek končil dramaticky. Opravdu teď dělám jenom večerní směny (17:00-24:00), dostávám za to 50€ (ve výsledku lepší plat než když jsem dělal dvojsměny). Mám teď tedy čas na 9h spánku (moc nerozumím proč spím tak moc, ale tak to teď prostě je), dopoledne čas na sebe, neobědvám ať ušetřím, trajdám po Římě, obdivuju chrámy, sloupy, chrámky a sloupky. Jím vždy dvojchodový snídaňoběd před směnou a večeři mám ve formě salátu (salát, rajčata, mozarella, prosciutto, hodně mozarelly a prosciutta) po konci směny.
+
+![Trajdání po Římě - objevování chrámů a sloupků](../assets/13-18-img-2.jpg)
 
 ## Spolubydlící si mě všimnul 😳
 
@@ -35,6 +39,8 @@ Od tohoto dne tedy doma jsem od příchodu z práce až do 15 hodiny. Po této u
 
 V práci se mi daří dělat co se po mě chce a mám pár vylepšení, které mi (spíše než nadřízenému) dělají radost. Moje životně první decentně vypadající capuccino. Ještě to není pětihvězdičkový latte art, ale chutná to dobře a už se na to dá dívat.
 
+![První decentní capuccino](../assets/13-18-img-3.jpg)
+
 Učím se dělat Espresso Martini, což je jeden z nejlépe vypadajících a nejlépe chutnajících koktejlů, co máme na lístku. Navíc u výroby používám shaker a 4 ingredience, cítím se tedy jako skutečný barman. Za umělecké dekorace dostávám pochvaly od kolegů barmanů i všímavých číšníků ❤
 
 Daří se mi taky dělat nějaké otočky s flaškami, míchátky a tak dále, takže je práce zábavná, a dostávám dost DÝŽEK (až na to že se dýžka potom dělí mezi celým týmem - prům. to dělá zisk tak 5€ na den).
@@ -42,6 +48,8 @@ Daří se mi taky dělat nějaké otočky s flaškami, míchátky a tak dále, t
 ## Na hotelu s Američankami
 
 Dále své schopnosti rozšiřuju o to, jak jako barman dostávat kontakt od pěkných turistek. Daří se mi to u tří Američanů (2x holka, 1x gay) z Utahu. Respektive, já dávám svůj kontakt jim 🤦‍♀️. Dávají si tequilla shoty, pina colladu a vodka-lemon a po tom si jedna Američanka říká o můj Instagram. Domlouváme se, že jim ukážu nějaké bary v okolí po konci mojí směny.
+
+![Večerní bary s Američany z Utahu](../assets/13-18-img-4.jpg)
 
 Čekají mě po konci směny u restaurace a já improvizovaně hledám bar (netuším nic o barech v okolí). Dáváme si pivo a já s nimi fascinovaně vedu interview o tom jak se žije v Utahu. Za prvé absolutně netuší kde je Česká Republika, já zase netuším kde je Utah. Fair enough. Zjišťuji, že Utah má státní Mormonské náboženství, takže nikde v republice legálně nekoupí tvrdý alkohol a vůbec všechny diskotéky, párty a nekřesťanské aktivity probíhají na černo.
 
@@ -62,6 +70,8 @@ Nedaří se mi najít ani jeden velkoobchod, hledám tedy "nejlepší obchod s e
 Další den rozhazuju sítě kolem mého místa bydliště a cestuji po 4 obchůdcích. Je 10 hodin dopoledne a všechny mají na Google mapách napsáno, že zavírají 13:30. První tři obchody zavřenym a vypadá to, že majitelé jsou někde na dovolené. U třetího obchodu už je 13:10, takže si objednávám Taxík ať to stihnu. Ten mi vysvětluje, že v Itálii funguje všechno na černo, obchody vedou Vietnamci/Arabové a teď že žádnou myš nenajdu protože mají všichni dovolenou. Na velkoobchod mám zapomenout. Radí mi, že mám zkusit hledat v supermarketu (kde je mizerná šance, že najdu myš), nebo zkusit hledat po čínských obchodech se smíšeným zbožím.
 
 Každopádně. Obchod číslo 4 který jsem našel na mapách má otevřeno a kupuji myš. Já i taxikář jsme v šoku.
+
+![Konečně úspěch - nová myš do notebooku](../assets/13-18-img-5.jpg)
 
 ## Post scriptum
 

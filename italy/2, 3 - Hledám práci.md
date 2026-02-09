@@ -13,15 +13,21 @@ Našel jsem fajn kavárnu, ze které dokončuji CV a přemýšlím jak ho přelo
 
 Večer mířím zpět na hostel pro zbytek potravin ze včerejška. Zjišťuju že je 7 hodin večer takže bych mohl začít řešit kde budu spát. V hostelu nemají místo dneska, zítra ani pozítří. Vyřeším to později. I guess.
 
+![Obědové a večeřové jídlo je v Itálii naprosto úžasné, ale zdejší snídaně jsou dost slabé. Toto je mimochodem croissant s marmeládou uvnitř.](../assets/2-3-img-1.jpg)
+
 ### Jím zeleň v parku
 
 V místním parku večeřuju odporný suchý salát, rajče a Fiocchi di Latte. Asi si zítra koupím olivový olej, ten salát se fakt nedá jíst. Mám na sobě úplně propocenou košili, což je mimo zpocené triko jeden ze dvou svrchních kusů oblečení, co tu s sebou mám. Vyrážím na sraz s Couchsurfery koukat na západ Slunce.
 
 V autobuse přemýšlím že jednodušším řešením suchého salátu bude místo olivového oleje už nekupovat salát.
 
+![Šalácik](../assets/2-3-img-2.jpg)
+
 ### Indonéská masáž
 
 Přes Couchsurfing Hangouts potkávám lidi z Brazílie, Íránu (nyní učitelka umění v Berlíně), Indie a Německa, dáváme si italské pívo, italskou pízzu a potom jdu ke Couchsurferovi z Indonésie. Říká, že když přijdu k němu domů, tak musím být potichu, protože jeho spolubydlící nechce, ať přijímá Couchsurfery. Říká ať koupím víno, že můžeme někam zajít. Nebo tak to alespoň chápu.
+
+![Nějaké místní ochucené víno + Brazilec, Ind a Iránka](../assets/2-3-img-3.jpg)
 
 Rychlé vysvětlení - co je to Couchsurfing. Surfování po gaučích. Jde o to, že když lidi cestují, tak prostě můžou napsat místním, co chtějí poznat lidi (co cestují) a poskytnout jim místo na jejich gauči (nebo na jejich manželské posteli v tomto případě 😊).
 
@@ -53,6 +59,10 @@ Kavárna - snídaně a oběd, na večeři pizza, piva. Jsme na 3000 Kč. To je p
 
 Vypráví mi, jak před týdnem potkal německou matku s dítětem, které někdo okradly. V Říme si mám dát pozor na kapsáře. Prý je pozval do restaurace a poradil jim, co dělat dál a jak si nechat převést peníze od rodiny v Německu. John je evidentně dobrý člověk. Ale jeho včerejší masáž mi trochu nahnala strach. Říká, že se chce stěhovat od spolubydlícího, který mu nahání strach, a že bychom se mohli přestěhovat spolu (…), domlouváme se, že budeme v kontaktu a že mu ještě pomůžu s tím webem. A on že mi někdy udělá Indonéské jídlo (a doufám že nic dalšího).
 
+![Screenshot konverzace s Johnem](../assets/2-3-img-4.jpg)
+
 ### CV
 
 Sedím 3h v kavárně. Dávám si pizzu s parmskou šunkou. Píšu blogísek a hledám, kde si koupím komiks, triko a kde vytisknu CVs.
+
+![Pizza s parmskou šunkou](../assets/2-3-img-5.jpg)

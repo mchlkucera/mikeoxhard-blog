@@ -33,8 +33,12 @@ Každopádně den se skládá ze vstanutí, cesty do práce, polední směny, ho
 
 Od spodní strany po směru hodinových ručiček: Francesco, jeho manželka, já, servírka z Ekvádoru, Utscho, Raphael, kuchař x3, Borat a Rajo.
 
+![Skupinové foto s týmem restaurace](../assets/6-8-img-1.jpg)
+
 Většina týmu je z Bangladéše. Mimochodem, Rajo se takhle usmívá celý den, nechápu jak to dělá. Borat je ten, co se mnou není trpělivý a Francesco můj bartender mentor, skutečná kapacita.
 
 ### Štěstí na kole
 
 Jedu na elektrokole k Johnovi z práce, je 01 hodina ráno, jedu vedle Kolosea, mám puštěného nahlas Sinatru a zažívám naprostou rozkoš. Snažím se vystopovat, jak se tohle stalo. Co to přesně je za pocit? Co je to štěstí když zažívám toto po naprosto deadly 12h směně v Římě? Nebo je to právě proto, že jsem unavený po směně, takže je teď i klidná jízda na kole zážitek?
+
+![Noční jízda na kole kolem Kolosea](../assets/6-8-img-2.jpg)

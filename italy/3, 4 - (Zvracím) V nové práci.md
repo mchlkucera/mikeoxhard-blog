@@ -9,6 +9,8 @@ date: 2022-08-12
 
 Nacházím il negozioetto á la trafika, kde tisku 10ks Michal Kučera CV (IT) v3 za 2€. Dále mířím do Zary kde nakupuji černé a bílé triko, jsem ready hledat práci.
 
+![Ready hledat práci v Římě](../assets/3-4-img-1.jpg)
+
 První restauraci volím podle tipu jedné Italky co mi na Islandu řekla, že vlastní restauraci v Římě. Tak tam jdu. A tak trochu taky doufám, že mě tam nevezmou protože se budu zas cítit že jsem si to nezasloužil. Dávám CV, jdu do restaurace naproti. Tam se mě ptají, jestli je pravda že umím hrát na klavír a jestli mám zkušenosti za barem. Mám přijít zítra na 11:30. Budu si muset sehnat kalhoty.
 
 ### Potkají se Čech, Brazilec a Chorvatka a jdou spolu na pivo
@@ -18,6 +20,8 @@ Kde budu spát?
 Možnosti jsou: u Johna, koupit si hostel na jednu noc. Píše mi Kevin, že se dnes koná Couchsurfing hangout. A že to je teda proti pravidlům, ale můžu spát s ním na hostelu. Na zemi. Po včerejší masáži jsem uvolněn, udělám si postel z ručníku nebo nevim. Souhlasím.
 
 Setkávají se tedy Čech, Brazilec, Chorvatka, Egypťan, Srb a Maročan (který umí Rusky). Pod hřmící oblohou, na dešti si dávají bílé víno, které nakoupil včera Čech (na popud Indonésana, který ho mimo jiné masíroval). Vyprávím o Indonésanovi a všichni vykuleně koukají. Prý je na Couchsurfingu hodně divných lidí. Překvapivě.
+
+![Couchsurfing hangout v Římě](../assets/3-4-img-2.jpg)
 
 Maročan mi vypráví že v Ukrajině a Rusku přijdeš do klubu a slétne se kolem tebe 7 holek. Většina z nich prý nikdy neodchází ze země (pokud se teda zrovna neválčí, žeano). Říkám mu, že dělám s počítači a on sdílí, že si často pronajímá hackery z dark webu. Že díky nim jezdí zadarmo na elektronických koloběžkách, pronajímá si letadla a tak. Zajímavé.
 
@@ -31,6 +35,8 @@ Zjišťuji, že Kevin není schopen poskládat jedinou smysluplnou větu. Snaž�
 
 Po 15 minutách marného výslechu se ho s těžkým srdcem opouštím, a vzhledem k tomu že jsem fakt dead mířím do nejbližšího parku. On to asi není park, ale jsou tu historické sloupy a tak. Nechť čtenář posoudí sám.
 
+![Historické sloupy - můj noční park](../assets/3-4-img-3.jpg)
+
 Procházím stavitelskou zábranu a nacházím lavičku, dávám pod hlavu baťůžek a usínám za 12 sekunnd. Full homeless style. Ráno (tedy za 3 hodiny) mě vyhazují milí konstruktéři s tím, že tady fakt spát nemůžu. Omlouvají se (asi vypadám uboze).
 
 S polofunkční šedou kůrou mozkovou mířím do nejbližšího paneláku do nejvyššího patra, kde nejsou byty, a tam spím ještě jednu hodinu.
@@ -41,11 +47,15 @@ Ráno jdu do kavárny a je mi fakt blbě. Včera jsem měl 3 piva, tedy společe
 
 Jsem velmi mile přivítán místním personálem, někteří z nich ovládají angličtinu, jiní ne. Rozumí, že moc nerozumím a mluví na mě pěkně pomalou, srozumitelnou italštinou. Vidí že jsem vyjukaný a nervózní. A krom toho se furt potím.
 
+![První den v nové práci](../assets/3-4-img-4.jpg)
+
 Pomáhám doplňovat vody, učím se (připomínám si), jak se dělají koktejly. Seznamuju se se všemi přítomnými (Francesco na baru je můj hlavní mentor). Snažím se tedy vstřebat všechny italské pokyny, co na mě padají a do toho jsem úplně slitý a netuším co se děje. Když ucítím jakýkoli smrad (v kuchyni, v baru) tak se mi zvedá žaludek.
 
 Dnešní snídaně (2L perlivé vody) míří do místního záchodu. Nemůžu se dočkat, až směna skončí. To se děje ve tři hodiny a já dostávám za odměnu na výběr z naprosto úžasného menu obsahujícího všechny italské skvělé jídla, které si dokážete představit. Těstoviny (desítka), pizza (desítky), saláty, masa. Já cítím, že nemám odvahu na nic. Jsou na mě hrozně hodní a asi vypadám unaveně, tak mě přesvědčují, že si můžu dát cokoliv chci. Dávám si salát caprese, kousám do jednoho rajčete, které za 5 minut končí v záchodové míse. Jdu potom zkusit štěstí na výborně vypadající mozarelle a ta dopadá stejně.
 
 Ptám se Johna, jestli u něho můžu přespat. Je u Trevi Fountain (která je asi 500m od té restaurace, kde jsem já). Takže mě vyzvedává, hledá autobus a jedeme k němu. Já se celou cestu 100% soustředím na to, ať poctivě převádím CO2 na O2, a nestane se žádná nehoda (tedy hluboce dýchám, ať se v autobuse nepobliju). Dorážím k Johnovi a jdu spát na 4h. Při probuzení mi John nabízí výbornou Indonéskou polívku s meatballs (akorát že to byly fishballs), houbou a nějakou další zvláštní zeleninou. Už je mi dobře a polívečka dělá bříšku dobře. Přichází si Kevin pro tašku.
+
+![Odpočinek u Johna po náročné směně](../assets/3-4-img-5.jpg)
 
 ### Kevin se probudil v nemocnici
 
@@ -64,6 +74,8 @@ Proč se rovnou nenapíchnout na morfium a už necítit žádnou bolest. Nikdy.
 Nebudete více "hrdí" nebo co když si přečtete o to, jaké překážky jsem přešel? Kašlu na ploché mluvení a sdílení jakéhosi plochého nic.
 
 Takže ne že byste mi byli lhostejní, ale právě proto že mi nejste lhostejní se radši bojte jak dopadne příští Indonéská masáž. Volím si prožívat celé spektrum toho, co jde prožít a něco si z toho odnést a odejít jako lepší člověk. A to budu i sdílet. Ne filtrovat a vymýšlet si. Ale to nebude to jenom tak.
+
+![Římské scenérie mezi směnami](../assets/3-4-img-6.jpg)
 
 ### Finance po dni 4
 

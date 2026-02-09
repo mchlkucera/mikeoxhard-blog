@@ -17,6 +17,8 @@ Každý den je teď jenom jeden den. Vstávání u Johna v 10:00, 30min cesty do
 
 Po konci směn chodím znaven vždy k Trevi Fountain přemýšlet, co tu vlastně dělám. Mood úroveň je vždy "za rohem slza". Tento mood nastává vlastně vždycky když nejsem něčím rozptýlen. U fontány pozoruji turisty, kteří dumají nad tím, jaký úhel pro Jejich Zmocnění u fontány zvolit. Někteří dumají až 20 minut. Někteří prosí sedícího Čecha o pomoc se Zmocněním. Svou misi beru zodpovědně - beztak díky mé pomocí dostanou plno lajků od všech kamarádů, kteří neměli čas nebo peníze na cestování. Není to krásné?
 
+![Video u Trevi Fountain - turisti a jejich fotky](../assets/8-12-img-1.mp4)
+
 Mé problémy se dělí na únavu fyzickou (nohy), mentální (dumat nad každou větou ze mě nějakým způsobem dělá ve všech intelektuálních úrovních úplného imbecila) a na pěkné Italky. To je pro nadpis. Tedy obecně všechny (mladé) co si "užívají" (dovolenou). Co neřeší. Co chodí do barů. Co se usmívají. A co tedy dělám JÁ a hlavně TADY? Proč nejsem jinde? Tam s nimi, třeba? Proč nejsem někde na pláži? Proč nejsem někde v čajovně na Stodolní? Proč nechodím po horách se psem? Proč nejsem s kamarády? Proč chci (chtěl jsem??) ve svých 21 letech dělat 12h směny za 5.3€ za hodinu, nechat po sobě řvát, být mezi lidma co se na mě dívají jako na tupce co nic nechápe? Proč jsem si tohle vybral, nebo jak jsem se tady dostal? Kde je ta jasná vize se kterou jsem tu jel? A byla to kdy jasná vize? O co šlo? Útěk od čeho? K čemu?
 
 Představoval jsem si co? Že budu mít práci 2h denně a zbytek dne budu trajdat po Vatikánu? Nevím. Rozhodně jsem si ale nepředstavoval, že v Římě uvidím akorát Koloseum, fontánu kde se všichni fotí, a že potkám úchylné Indonésany, opilé Brazilce (ŽÁDNÝ VATIKÁN - protože celý den pracuji).
@@ -24,6 +26,8 @@ Představoval jsem si co? Že budu mít práci 2h denně a zbytek dne budu trajd
 ## Update k bydlení
 
 John jede na dovolenou do Německa takže od dneška - 18. 08. - hledám jiné bydlení. John mi ale se samozřejmým výrazem říká, ať prostě spím u něho doma, ale že si mě nesmí všimnout spolubydlící. Nechává mi croissanty na snídani, klíče ve dveřích a odjíždí do Mnichova. What??!
+
+![Croissanty na snídani od Johna](../assets/8-12-img-2.jpg)
 
 Mám Johnovy klíče, spím ale dvě noci v hostelu. Protože jsem se tak prostě rozhodl. Zatím jsem nepřijal že mám v batohu klíče od bytu Indonésana kterého jsem potkal před TÝDNEM. Zítra mě čeká první volný den. Budu spát a přemýšlet. Hlavně přemýšlet.
 
@@ -64,6 +68,8 @@ Pozdní část odpolední směny jde rychle z kopce, protože místo mojita bez 
 Pro někoho běžná zkušenost - promluvit si o práci, pro mě dobrodružství na úrovni nelegálního přespávání v hotelu.
 
 Trochu se uklidňuji salátem, tuňákem a koncertem od Čajkovského a píšu zprávu pro Francesca.
+
+![Uklidňující večeře před konfrontací](../assets/8-12-img-3.jpg)
 
 Na konci směny se mě Borat ptá, jestli chci zítra dělat dvojitou směnu, v panice odpovídám ano (?????), a čekám až se všichni rozejdou, abych šel za Francescem. Říkám mu, že jsem mu napsal zprávu, ten mi ale říká, že veškeré plánování je na Boratovi, jdu tedy nervózně za ním. Čte, říká ať přijdu zítra na poslední dvojitou směnu, potom budu dělat jen večery. Takže happy ending? Copak to bylo tam jednoduché? Proč to stálo tolik prosezených minut u Fontány? To si nejsem schopen přiznat, že mi něco nejde? Nerad lidi "zklamávám"? Neumím s lidmi mluvit upřímně?
 
