@@ -1,6 +1,6 @@
 ---
-import PostLayout from '../../layouts/PostLayout.astro';
 import { getCollection } from 'astro:content';
+import PostLayout from '../../layouts/PostLayout.astro';
 
 export async function getStaticPaths() {
   const italyArticles = await getCollection('italy', ({ id }) => id !== 'index.md');
@@ -21,18 +21,15 @@ const { Content } = await entry.render();
 const title = entry.id.replace(/\.md$/, '');
 
 // Extract cover image from content
-const extractCoverImage = (body: string) => {
+const extractCoverImage = (body: string): { alt: string; src: string } | undefined => {
   const imageMatch = body.match(/!\[([^\]]*)\]\(([^)]+)\)/);
   if (imageMatch) {
     return { alt: imageMatch[1], src: imageMatch[2] };
   }
-  return null;
+  return undefined;
 };
 
 const coverImage = extractCoverImage(entry.body);
-
-// Remove cover image from content by creating a custom renderer
-// We'll handle this in the component
 ---
 
 <PostLayout

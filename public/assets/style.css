@@ -13,6 +13,7 @@
   --accent: #24837B;
 }
 
+html.theme-dark,
 .theme-dark {
   /* Dark mode */
   --bg: #1C1B1A;
@@ -202,10 +203,12 @@ li {
   padding: 0 1rem;
 }
 
-.post-content h1,
-.post-content h2,
+.post-content h2 {
+  margin-top: 3rem;
+}
+
 .post-content h3 {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
 }
 
 .post-content h1:first-child,
@@ -346,14 +349,13 @@ figcaption {
 }
 
 .italy-featured-image {
-  width: 100%;
+  width: calc(100% + 2rem);
+  margin-left: -1rem;
+  margin-right: -1rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
   display: block;
-  border-radius: 6px;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  object-position: center;
+  border-radius: 0;
 }
 
 /* Homepage sections */

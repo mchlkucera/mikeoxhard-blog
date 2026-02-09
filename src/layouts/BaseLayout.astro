@@ -19,6 +19,12 @@ const pageDescription = description || siteDescription;
   <title>{pageTitle}</title>
   <meta name="description" content={pageDescription}>
   <link rel="stylesheet" href="/assets/style.css">
+  <script is:inline>
+    // Apply theme based on system preference - runs before page renders to prevent flash
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('theme-dark');
+    }
+  </script>
 </head>
 <body>
   <header>
@@ -36,17 +42,12 @@ const pageDescription = description || siteDescription;
   </footer>
 
   <script>
-    // Apply theme based on system preference
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.body.classList.add('theme-dark');
-    }
-
     // Listen for theme changes
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
       if (e.matches) {
-        document.body.classList.add('theme-dark');
+        document.documentElement.classList.add('theme-dark');
       } else {
-        document.body.classList.remove('theme-dark');
+        document.documentElement.classList.remove('theme-dark');
       }
     });
   </script>

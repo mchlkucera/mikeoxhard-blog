@@ -42,14 +42,13 @@ const formatDate = (date: Date) => {
     </header>
 
     {coverImage && (
-      <figure class={isItaly ? '' : 'post-cover'}>
+      <div class={isItaly ? 'post-cover' : 'post-cover'}>
         <img
           src={coverImage.src}
           alt={coverImage.alt}
           class={isItaly ? 'italy-featured-image' : ''}
         />
-        <figcaption>{coverImage.alt}</figcaption>
-      </figure>
+      </div>
     )}
 
     <div class="post-content">
