@@ -245,10 +245,17 @@ italyArticles.forEach(article => {
     .replace(/!\[(.*?)\]\((\.\.\/)?assets\/([^)]+)\)/g, '<img src="/assets/$3" alt="$1">')
     .replace(/!\[(.*?)\]\(([^)]+)\)/g, '<img src="$2" alt="$1">')
     .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2">$1</a>')
-    .replace(/\n\n/g, '</p><p>')
-    .replace(/^(?!<)(.+)$/gm, (match) => match.startsWith('<') ? match : match)
     .split('\n\n')
-    .map(p => p.trim().startsWith('<') ? p : `<p>${p}</p>`)
+    .map(p => {
+      const trimmed = p.trim();
+      if (!trimmed) return '';
+      // Don't wrap block elements in paragraphs
+      if (trimmed.startsWith('<h') || trimmed.startsWith('<img') || trimmed.startsWith('<div')) {
+        return trimmed;
+      }
+      return `<p>${trimmed}</p>`;
+    })
+    .filter(p => p)
     .join('\n');
 
   // Extract first image for cover
@@ -303,7 +310,16 @@ defaultFiles.forEach(fileName => {
         .replace(/!\[(.*?)\]\(([^)]+)\)/g, '<img src="$2" alt="$1">')
         .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2">$1</a>')
         .split('\n\n')
-        .map(p => p.trim() ? `<p>${p}</p>` : '')
+        .map(p => {
+          const trimmed = p.trim();
+          if (!trimmed) return '';
+          // Don't wrap block elements in paragraphs
+          if (trimmed.startsWith('<h') || trimmed.startsWith('<img') || trimmed.startsWith('<div')) {
+            return trimmed;
+          }
+          return `<p>${trimmed}</p>`;
+        })
+        .filter(p => p)
         .join('\n');
 
       // Extract first image for cover
