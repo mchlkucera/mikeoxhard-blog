@@ -6,10 +6,9 @@ interface Props {
   date?: Date;
   backLink?: { href: string; label: string };
   coverImage?: { src: string; alt: string };
-  isItaly?: boolean;
 }
 
-const { title, date, backLink, coverImage, isItaly = false } = Astro.props;
+const { title, date, backLink, coverImage } = Astro.props;
 
 const formatDate = (date: Date) => {
   return date.toLocaleDateString('en-US', {
@@ -23,10 +22,8 @@ const formatDate = (date: Date) => {
 <BaseLayout title={title}>
   <article class="post">
     {backLink && (
-      <div class={`back-link-wrapper ${isItaly ? '' : 'post-back-link'}`}>
-        <a href={backLink.href} class={isItaly ? 'italy-back-link' : ''}>
-          {backLink.label}
-        </a>
+      <div class="back-link-wrapper">
+        <a href={backLink.href}>{backLink.label}</a>
       </div>
     )}
 
@@ -42,12 +39,8 @@ const formatDate = (date: Date) => {
     </header>
 
     {coverImage && (
-      <div class={isItaly ? 'post-cover' : 'post-cover'}>
-        <img
-          src={coverImage.src}
-          alt={coverImage.alt}
-          class={isItaly ? 'italy-featured-image' : ''}
-        />
+      <div class="post-cover">
+        <img src={coverImage.src} alt={coverImage.alt} />
       </div>
     )}
 

@@ -37,13 +37,12 @@ const coverImage = extractCoverImage(entry.body);
   date={entry.data.date ? new Date(entry.data.date) : undefined}
   backLink={{ href: '/italy/', label: '\u2190 Back' }}
   coverImage={coverImage}
-  isItaly={true}
 >
   <Content />
 </PostLayout>
 
 <style is:global>
-  /* Hide the first image in italy articles since we show it as cover */
+  /* Hide the first image in articles since we show it as cover */
   .post-content > p:first-child:has(img:only-child) {
     display: none;
   }

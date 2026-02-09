@@ -66,15 +66,18 @@ nav {
 }
 
 main {
+  width: 100%;
   max-width: 60ch;
   margin: 0 auto;
   padding: 0 1rem;
   min-height: calc(100vh - 200px);
 }
 
-/* Italy articles - wider main container */
-main:has(.italy-back-link) {
-  max-width: calc(60ch + 300px);
+/* Gallery pages - wider layout */
+body:has(.gallery-container) header,
+body:has(.gallery-container) main,
+body:has(.gallery-container) footer {
+  max-width: 1400px;
 }
 
 footer {
@@ -147,25 +150,9 @@ li {
 }
 
 /* Post Layout */
-.post-back-link {
-  max-width: 60ch;
-  margin: 0 auto 1.5rem auto;
-  padding: 2rem 1rem 0;
-}
-
-.post-back-link a {
-  color: var(--text);
-  text-decoration: none;
-  font-size: 0.95rem;
-}
-
-.post-back-link a:hover {
-  color: var(--link);
-}
-
 .post-header {
   margin-bottom: 2rem;
-  padding: 0 1rem;
+  padding: 0;
   max-width: 60ch;
   margin-left: auto;
   margin-right: auto;
@@ -183,10 +170,7 @@ li {
 }
 
 .post-cover {
-  margin-left: -1rem;
-  margin-right: -1rem;
   margin-bottom: 2rem;
-  width: calc(100% + 2rem);
 }
 
 .post-cover img {
@@ -200,7 +184,7 @@ li {
   line-height: 1.7;
   max-width: 60ch;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0;
 }
 
 .post-content h2 {
@@ -215,15 +199,6 @@ li {
 .post-content h2:first-child,
 .post-content h3:first-child {
   margin-top: 0;
-}
-
-/* Italy article - constrain all text elements to same width */
-main:has(.italy-back-link) .post-header,
-main:has(.italy-back-link) .post-header h1,
-main:has(.italy-back-link) p,
-main:has(.italy-back-link) h2,
-main:has(.italy-back-link) h3 {
-  max-width: 60ch;
 }
 
 /* Homepage List */
@@ -326,33 +301,21 @@ figcaption {
   line-height: 1.4;
 }
 
-/* Italy article styles */
+/* Back link */
 .back-link-wrapper {
-  max-width: 60ch;
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 1.5rem;
 }
 
-.italy-back-link {
-  display: inline-block;
+.back-link-wrapper a {
   color: var(--text-muted);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  opacity: 0.8;
 }
 
-.italy-back-link:hover {
+.back-link-wrapper a:hover {
   color: var(--link);
-}
-
-.italy-featured-image {
-  width: calc(100% + 2rem);
-  margin-left: -1rem;
-  margin-right: -1rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  display: block;
-  border-radius: 0;
+  opacity: 1;
 }
 
 /* Homepage sections */
@@ -388,30 +351,4 @@ figcaption {
 .category-item a:hover {
   color: var(--link);
   text-decoration-color: var(--link);
-}
-
-/* Italy article responsive */
-@media (max-width: 768px) {
-  .italy-back-link {
-    text-align: center;
-    display: block;
-  }
-
-  .post-header {
-    text-align: center;
-  }
-
-  .post-header h1 {
-    text-align: center;
-  }
-
-  .post-meta {
-    text-align: center;
-  }
-
-  .italy-featured-image {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-  }
 }

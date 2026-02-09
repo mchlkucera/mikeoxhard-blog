@@ -1,6 +1,6 @@
 {
-  "buildCommand": "bun build.js",
-  "outputDirectory": "_site",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
   "routes": [
     {
       "handle": "filesystem"
