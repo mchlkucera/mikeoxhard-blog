@@ -137,7 +137,7 @@ let homeContent = `
     <h2>Articles</h2>
     <ul class="articles-list">
       <li>
-        <a href="/default/life-is-meaningless.-unless-you're-a-cyanobacteria/">
+        <a href="/default/life-is-meaningless.-unless-youre-a-cyanobacteria/">
           <span class="article-date">2026 · 01</span>
           <span class="article-title">Life is meaningless. Unless you're a cyanobacteria</span>
         </a>
