@@ -9,7 +9,7 @@ date: 2022-09-01
 
 Navštěvuje mě sestřička, se kterou bydlím dvě noci v hotelu, kde si užívám pohodlnou postel, parádní snídaně a nachlazení z klimatizace (tato informace se ještě bude později hodit, zapamatovat!). Dopoledne máme úplně turistický program - prohlídka Kolosea s průvodcem, lekce dělání italských těstovin, italské víno. Užíváme si společný čas, mám radost že se s někým můžu bavit česky.
 
-![Fotka z prohlídky kolem kolosea. Zapomněl jsem jméno, význam i historii původní budovy. Minimálně to jsou moc pěkné sloupy.](https://prod-files-secure.s3.us-west-2.amazonaws.com/2e2d5d81-8fa9-4b93-989a-d5ba3a4ef7d3/ff0029f2-435b-47ca-aa94-3f6550f82a8b/IMG20220901111016.jpg)
+![Fotka z prohlídky kolem kolosea. Zapomněl jsem jméno, význam i historii původní budovy. Minimálně to jsou moc pěkné sloupy.](../assets/19-30-colosseum-building.jpg)
 
 ![Děláme domácí těstoviny, zjišťuju že jsou pouze z mouky a vajíčka což je z nějakého důvodu šokující. Poté nudle papáme. Vlastnoručně udělané Raviolli zařazuji mezi jedny z nejlepších jídel, které jsem kdy měl.](https://prod-files-secure.s3.us-west-2.amazonaws.com/2e2d5d81-8fa9-4b93-989a-d5ba3a4ef7d3/a1560f86-7d6c-4a34-81f6-9a9c9d327682/IMG-20220901-WA0001.jpg)
 
