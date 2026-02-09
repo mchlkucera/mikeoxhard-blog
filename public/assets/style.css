@@ -77,6 +77,13 @@ main:has(.italy-back-link) {
   max-width: calc(60ch + 300px);
 }
 
+/* Gallery pages - wider layout */
+body:has(.gallery-container) header,
+body:has(.gallery-container) main,
+body:has(.gallery-container) footer {
+  max-width: 1400px;
+}
+
 footer {
   max-width: 60ch;
   margin: 0 auto;
@@ -165,7 +172,7 @@ li {
 
 .post-header {
   margin-bottom: 2rem;
-  padding: 0 1rem;
+  padding: 0;
   max-width: 60ch;
   margin-left: auto;
   margin-right: auto;
@@ -183,10 +190,10 @@ li {
 }
 
 .post-cover {
-  margin-left: -1rem;
-  margin-right: -1rem;
   margin-bottom: 2rem;
-  width: calc(100% + 2rem);
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .post-cover img {
@@ -200,7 +207,7 @@ li {
   line-height: 1.7;
   max-width: 60ch;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0;
 }
 
 .post-content h2 {
@@ -332,6 +339,7 @@ figcaption {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1.5rem;
+  padding: 0;
 }
 
 .italy-back-link {
