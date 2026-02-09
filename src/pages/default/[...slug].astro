@@ -35,6 +35,7 @@ const coverImage = extractCoverImage(entry.body);
 <PostLayout
   title={title}
   date={entry.data.date ? new Date(entry.data.date) : undefined}
+  backLink={{ href: '/', label: '\u2190 Back' }}
   coverImage={coverImage}
   isItaly={false}
 >

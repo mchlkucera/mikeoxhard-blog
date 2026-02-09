@@ -27,16 +27,18 @@ const formatDate = (date: Date) => {
 ---
 
 <BaseLayout title={title}>
-  <style>
+  <style is:global>
     main {
-      max-width: 100%;
-      padding: 0;
+      max-width: 1400px !important;
+      padding: 0 1rem !important;
     }
+  </style>
 
+  <style>
     .gallery-container {
       max-width: 100%;
-      margin: 0 auto;
-      padding: 1.5rem 1rem;
+      margin: 0;
+      padding: 1.5rem 0;
     }
 
     .gallery-header {

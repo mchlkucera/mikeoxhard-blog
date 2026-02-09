@@ -38,16 +38,10 @@ const getSlug = (id: string) => {
         {sortedArticles.map((article) => {
           const title = article.data.title || article.id.replace(/\.md$/, '');
           const slug = getSlug(article.id);
+          const dateStr = article.data.date ? formatDate(new Date(article.data.date)) + ' ' : '';
           return (
             <li class="note-item">
-              {article.data.date && (
-                <div class="note-date">
-                  {formatDate(new Date(article.data.date))}
-                </div>
-              )}
-              <h2 class="note-title">
-                <a href={`/default/${slug}/`}>{title}</a>
-              </h2>
+              <a href={`/default/${slug}/`}>{dateStr}{title}</a>
             </li>
           );
         })}
