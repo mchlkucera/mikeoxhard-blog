@@ -75,8 +75,7 @@ main {
 
 /* Gallery pages - wider layout */
 body:has(.gallery-container) header,
-body:has(.gallery-container) main,
-body:has(.gallery-container) footer {
+body:has(.gallery-container) main {
   max-width: 1400px;
 }
 
