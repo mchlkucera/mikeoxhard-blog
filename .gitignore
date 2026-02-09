@@ -1,15 +1,20 @@
 # Build output
-_site/
+dist/
+.astro/
+
+# Dependencies
+node_modules/
 
 # Obsidian
 .obsidian/
 
 # Vercel
-.vercel
+.vercel/
 .env*.local
 
 # Testing
 .playwright-mcp/
+_screenshots/
 
 # macOS
 .DS_Store
