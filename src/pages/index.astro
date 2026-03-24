@@ -2,7 +2,6 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-// Get default articles
 const defaultArticles = await getCollection('default');
 const sortedArticles = defaultArticles.sort((a, b) => {
   const dateA = a.data.date ? new Date(a.data.date).getTime() : 0;
@@ -10,15 +9,29 @@ const sortedArticles = defaultArticles.sort((a, b) => {
   return dateB - dateA;
 });
 
+const layers = [
+  { id: 'signal', name: 'Signal', desc: 'weeks — tools, takes, what\'s happening now' },
+  { id: 'craft', name: 'Craft', desc: 'months — building things, engineering, products' },
+  { id: 'life', name: 'Life', desc: 'years — stories, travel, people' },
+  { id: 'bones', name: 'Bones', desc: 'forever — meaning, mortality, what remains' },
+];
+
 const formatDate = (date: Date) => {
   const year = date.getFullYear();
   const month = String(date.getMonth() + 1).padStart(2, '0');
-  return `${year} \u00B7 ${month}`;
+  return `${year}\u00B7${month}`;
 };
 
 const getSlug = (id: string) => {
   return id.replace(/\.md$/, '').toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
 };
+
+const articlesByLayer = layers.map(layer => ({
+  ...layer,
+  articles: sortedArticles.filter(a => a.data.layer === layer.id),
+})).filter(layer => layer.articles.length > 0);
+
+const uncategorized = sortedArticles.filter(a => !a.data.layer);
 ---
 
 <BaseLayout>
@@ -32,20 +45,43 @@ const getSlug = (id: string) => {
       </ul>
     </section>
 
-    <section class="articles-section">
-      <h2>Articles</h2>
-      <ul class="note-list">
-        {sortedArticles.map((article) => {
-          const title = article.data.title || article.id.replace(/\.md$/, '');
-          const slug = getSlug(article.id);
-          const dateStr = article.data.date ? formatDate(new Date(article.data.date)) + ' ' : '';
-          return (
-            <li class="note-item">
-              <a href={`/default/${slug}/`}>{dateStr}{title}</a>
-            </li>
-          );
-        })}
-      </ul>
-    </section>
+    {articlesByLayer.map((layer) => (
+      <section class="layer-section">
+        <h2 class="layer-heading">
+          {layer.name}
+          <span class="layer-desc">{layer.desc}</span>
+        </h2>
+        <ul class="note-list">
+          {layer.articles.map((article) => {
+            const title = article.data.title || article.id.replace(/\.md$/, '');
+            const slug = getSlug(article.id);
+            const dateStr = article.data.date ? formatDate(new Date(article.data.date)) + ' ' : '';
+            return (
+              <li class="note-item">
+                <a href={`/default/${slug}/`}>{dateStr}{title}</a>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+    ))}
+
+    {uncategorized.length > 0 && (
+      <section class="articles-section">
+        <h2>Other</h2>
+        <ul class="note-list">
+          {uncategorized.map((article) => {
+            const title = article.data.title || article.id.replace(/\.md$/, '');
+            const slug = getSlug(article.id);
+            const dateStr = article.data.date ? formatDate(new Date(article.data.date)) + ' ' : '';
+            return (
+              <li class="note-item">
+                <a href={`/default/${slug}/`}>{dateStr}{title}</a>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+    )}
   </div>
 </BaseLayout>

@@ -17,10 +17,8 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 
-// Get title from frontmatter or filename
 const title = entry.data.title || entry.id.replace(/\.md$/, '');
 
-// Extract cover image from content
 const extractCoverImage = (body: string): { alt: string; src: string } | undefined => {
   const imageMatch = body.match(/!\[([^\]]*)\]\(([^)]+)\)/);
   if (imageMatch) {
@@ -35,6 +33,7 @@ const coverImage = extractCoverImage(entry.body);
 <PostLayout
   title={title}
   date={entry.data.date ? new Date(entry.data.date) : undefined}
+  layer={entry.data.layer}
   backLink={{ href: '/', label: '\u2190 Back' }}
   coverImage={coverImage}
 >
@@ -42,7 +41,6 @@ const coverImage = extractCoverImage(entry.body);
 </PostLayout>
 
 <style is:global>
-  /* Hide the first image in articles since we show it as cover */
   .post-content > p:first-child:has(img:only-child) {
     display: none;
   }

@@ -16,6 +16,7 @@ const defaultCollection = defineCollection({
     layout: z.string().optional(),
     date: z.coerce.date().optional(),
     title: z.string().optional(),
+    layer: z.enum(['signal', 'craft', 'life', 'bones']).optional(),
   }),
 });
 

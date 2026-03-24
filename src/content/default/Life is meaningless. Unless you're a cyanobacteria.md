@@ -1,6 +1,7 @@
 ---
 date: 2026-01-18
 layout: post
+layer: bones
 ---
 
 ![Cyanobacteria Cover](/assets/cyanobacteria-cover.jpg)
